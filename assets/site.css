@@ -4,10 +4,10 @@
 :root {
   --bg: #ffffff;
   --surface: #f2f5fb;
-  --ink: #0e1a33;
+  --ink: #041e37;
   --muted: #56627a;
   --line: #dce3ef;
-  --accent: #1970ff;
+  --accent: #1a71ff;
   --accent-ink: #ffffff;
   --accent-soft: #e6efff;
   --ok: #128a5a;
@@ -63,7 +63,7 @@ p { margin: 0; }
 .top { padding-block: 22px; }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; }
-.brand img { width: 36px; height: 36px; }
+.brand img { height: 40px; width: auto; }
 .logo-on-dark { display: none; }
 .top-link { color: var(--muted); text-decoration: none; font-size: 0.95rem; }
 .top-link:hover { color: var(--ink); }
@@ -267,7 +267,7 @@ footer a:hover { color: var(--ink); }
 .video iframe, .video video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .video .poster { display: grid; gap: 22px; justify-items: center; text-align: center; padding: 24px; }
 .video .poster p { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; max-width: 16ch; }
-.video .playbtn { width: clamp(64px, 9vw, 92px); aspect-ratio: 1; border-radius: 50%; background: #1970ff; display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(25, 112, 255, .25); }
+.video .playbtn { width: clamp(64px, 9vw, 92px); aspect-ratio: 1; border-radius: 50%; background: #1a71ff; display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(25, 112, 255, .25); }
 .video .playbtn::after { content: ""; border-left: 26px solid #fff; border-top: 16px solid transparent; border-bottom: 16px solid transparent; margin-left: 6px; }
 .video .ph-note { position: absolute; left: 16px; bottom: 14px; font-family: var(--font-mono); font-size: 0.78rem; background: rgba(255, 255, 255, .12); padding: 6px 10px; border-radius: 8px; }
 .video .ph-len { position: absolute; right: 16px; bottom: 14px; font-family: var(--font-mono); font-size: 0.78rem; background: rgba(0, 0, 0, .35); padding: 6px 10px; border-radius: 8px; }
