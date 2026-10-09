@@ -84,7 +84,7 @@ p { margin: 0; }
 
 /* Sektionen */
 section { padding-block: clamp(64px, 9vw, 112px); }
-.band { background: linear-gradient(to bottom, var(--bg) 0, var(--surface) clamp(80px, 12vw, 160px), var(--surface) calc(100% - clamp(80px, 12vw, 160px)), var(--bg) 100%); }
+.band { background: var(--surface); }
 .sec-head { display: grid; gap: 16px; max-width: 760px; margin-bottom: clamp(36px, 5vw, 56px); }
 
 /* Hero */
