@@ -353,3 +353,10 @@ form .btn { width: 100%; margin-top: 6px; }
 .proofbar-note { margin-top: 18px; color: var(--muted); font-size: 0.98rem; max-width: 70ch; }
 .proofbar-note strong { color: var(--ink); }
 @media (max-width: 520px) { .ev { grid-template-columns: 1fr; gap: 2px; } .inbox { width: 100%; } }
+
+/* Hero ohne Bild */
+.hero-solo { display: grid; }
+.hero-solo .hero-copy { max-width: 900px; }
+.hero-solo h1 { font-size: clamp(2.4rem, 5.6vw, 4.4rem); }
+.hero-solo .lead { max-width: 52ch; }
+.after-proof { padding-top: clamp(24px, 4vw, 48px); }
