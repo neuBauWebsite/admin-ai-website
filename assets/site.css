@@ -343,3 +343,13 @@ form .btn { width: 100%; margin-top: 6px; }
 .obj b { font-family: var(--font-display); font-size: 1.15rem; font-weight: 650; line-height: 1.25; }
 .obj span { color: var(--muted); font-size: 0.98rem; }
 @media (max-width: 820px) { .obj { grid-template-columns: 1fr; gap: 24px; } }
+
+/* Nachrichten im Postfach-Beispiel */
+.ev q { display: block; quotes: "«" "»"; color: var(--muted); font-size: 0.9rem; line-height: 1.45; margin-top: 3px; }
+.ev.is-agent q { color: var(--ink); }
+.ev time { font-size: 0.78rem; }
+.ev { grid-template-columns: 76px 1fr; padding: 11px 14px; }
+.proofbar-grid b { color: var(--accent); }
+.proofbar-note { margin-top: 18px; color: var(--muted); font-size: 0.98rem; max-width: 70ch; }
+.proofbar-note strong { color: var(--ink); }
+@media (max-width: 520px) { .ev { grid-template-columns: 1fr; gap: 2px; } .inbox { width: 100%; } }
