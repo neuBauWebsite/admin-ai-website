@@ -309,6 +309,7 @@ form .btn { width: 100%; margin-top: 6px; }
 
 /* Proof-Leiste direkt nach dem Hero */
 .proofbar { padding-block: 0 clamp(48px, 7vw, 80px); }
+.proofbar.band { padding-block: clamp(40px, 6vw, 64px); }
 .proofbar-k { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
 .proofbar-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .proofbar-grid div { padding: 24px 20px 24px 0; display: grid; gap: 4px; }
