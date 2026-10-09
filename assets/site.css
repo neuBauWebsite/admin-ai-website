@@ -224,14 +224,14 @@ details ul { margin: 12px 0 0; padding-left: 1.2em; color: var(--muted); font-si
 @media (max-width: 760px) { .zero { grid-template-columns: 1fr; } }
 
 /* Team */
-.team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.person { display: grid; gap: 14px; align-content: start; }
-.person img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 18px; background: var(--surface); }
-.person h3 { font-size: 1.25rem; }
-.person .role { color: var(--accent); font-weight: 600; font-size: 0.92rem; }
-.person p { color: var(--muted); font-size: 0.98rem; }
-@media (max-width: 820px) { .team { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 520px) { .team { grid-template-columns: 1fr; } .person img { aspect-ratio: 1 / 1; object-position: 50% 20%; } }
+.team { display: grid; grid-template-columns: repeat(3, minmax(0, 260px)); gap: 32px; }
+.person { display: grid; gap: 12px; align-content: start; }
+.person img { width: 100%; max-width: 260px; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 12%; border-radius: 16px; background: var(--surface); }
+.person h3 { font-size: 1.15rem; }
+.person .role { color: var(--accent); font-weight: 600; font-size: 0.88rem; }
+.person p { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 820px) { .team { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .team { grid-template-columns: 1fr; } .person { grid-template-columns: 96px 1fr; align-items: center; column-gap: 16px; } .person img { grid-row: span 2; } .person p { grid-column: 1 / -1; } }
 
 /* Beweis-Platzhalter */
 .proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -293,3 +293,44 @@ form .btn { width: 100%; margin-top: 6px; }
 .contact-card { display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: center; margin-top: 32px; }
 .contact-card img { width: 120px; height: 120px; object-fit: cover; object-position: 50% 15%; border-radius: 50%; }
 @media (max-width: 820px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* Postfach-Beispiel, aufgeräumt */
+.ev-t { display: block; font-weight: 600; }
+.inbox-head .live { display: inline-flex; align-items: center; gap: 6px; color: var(--ok); font-weight: 600; }
+.inbox-head .live i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+.ev.is-you { background: var(--surface); border-top-color: transparent; }
+.ev.is-you + .ev { border-top-color: transparent; }
+.ev.is-you time { color: var(--ink); font-weight: 600; }
+.inbox-foot { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-left: 8px; }
+.dot:first-child { margin-left: 0; }
+.dot-you { background: var(--surface); border: 1px solid var(--line); }
+.dot-agent { background: var(--accent-soft); border: 1px solid var(--accent); }
+
+/* Proof-Leiste direkt nach dem Hero */
+.proofbar { padding-block: 0 clamp(48px, 7vw, 80px); }
+.proofbar-k { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+.proofbar-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.proofbar-grid div { padding: 24px 20px 24px 0; display: grid; gap: 4px; }
+.proofbar-grid div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.proofbar-grid b { font-family: var(--font-display); font-size: clamp(1.9rem, 3.4vw, 2.6rem); letter-spacing: -0.03em; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.proofbar-grid b.todo { color: var(--muted); }
+.proofbar-grid span { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 760px) {
+  .proofbar-grid { grid-template-columns: 1fr 1fr; }
+  .proofbar-grid div, .proofbar-grid div + div { padding: 18px 12px; border-left: 0; }
+  .proofbar-grid div:nth-child(even) { border-left: 1px solid var(--line); }
+  .proofbar-grid div:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+
+/* Drei Wege + vierter Weg */
+.options { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 980px) { .options { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 720px) { .options { grid-template-columns: 1fr; } }
+.way4 { margin-top: 20px; border: 2px solid var(--accent); background: var(--accent-soft); border-radius: 20px; padding: clamp(24px, 3.5vw, 36px); display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px 48px; align-items: center; }
+.way4 .k { font-size: 0.82rem; color: var(--accent); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+.way4 h3 { font-size: clamp(1.35rem, 2.4vw, 1.8rem); margin-top: 8px; }
+.way4 ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.way4 li { display: flex; gap: 10px; }
+.way4 li::before { content: "✓"; color: var(--ok); font-weight: 700; flex: none; }
+@media (max-width: 760px) { .way4 { grid-template-columns: 1fr; } }

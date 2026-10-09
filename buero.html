@@ -25,29 +25,34 @@
 </header>
 
 <main>
-<section class="hero">
-  <div class="wrap form-grid">
-    <div class="hero-copy">
+<section class="prod-hero">
+  <div class="wrap">
+    <div class="head">
       <p class="eyebrow">Büro-Paket · 20 bis 30 aktive Objekte</p>
       <h1>Du zahlst 20 Objekte, du bekommst 30.</h1>
       <p class="lead">Ein Mitarbeiter pro Objekt, mehrere Benutzer, Handoff ans ganze Team, Reporting fürs Büro, Einrichtung durch uns vor Ort.</p>
-      <p class="muted">Für Maklerbüros mit 20 bis 30 aktiven Objekten. Bei mehr bauen wir dir ein eigenes Paket.</p>
-      <div class="contact-card">
-        <img src="assets/team-kristian.jpg" alt="Kristian Dobro" width="120" height="120">
-        <div><strong>Kristian Dobro</strong><p class="muted">Sales. Er ruft dich an und klärt mit dir, wie viele Postfächer verbunden werden.</p></div>
-      </div>
     </div>
 
-    <!-- Beim Livegang: Formular in Supabase-Tabelle «buero_anfragen» speichern und Kristian per Mail benachrichtigen. -->
-    <form id="buero-form" novalidate>
-      <h3>Gespräch anfragen</h3>
-      <label for="f-name">Name<input id="f-name" name="name" autocomplete="name" required></label>
-      <label for="f-buero">Büro<input id="f-buero" name="buero" autocomplete="organization" required></label>
-      <label for="f-objekte">Anzahl aktive Objekte<input id="f-objekte" name="objekte" type="number" min="1" inputmode="numeric" required></label>
-      <label for="f-tel">Telefon<input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></label>
-      <button class="btn" type="submit">Gespräch mit Kristian</button>
-      <p class="form-msg" id="form-msg" hidden>Vorschau: Das Formular wird beim Livegang angebunden.</p>
-    </form>
+    <!--
+      VIDEO-PLATZHALTER (Büro-Paket)
+      Ersetzen wie auf produkt.html: den <div class="poster">…</div> und die beiden <span class="ph-…"> löschen
+      und ein <iframe> von Vimeo oder YouTube (nicht gelistet) einsetzen.
+    -->
+    <div class="video" id="video" role="img" aria-label="Platzhalter für das Video zum Büro-Paket">
+      <div class="poster">
+        <span class="playbtn" aria-hidden="true"></span>
+        <p>2'000 Anfragen. Ein Ton fürs ganze Büro.</p>
+      </div>
+      <span class="ph-note">Video folgt · Platzhalter</span>
+    </div>
+
+    <div class="under-video">
+      <div class="cta-block">
+        <a class="btn" href="#gespraech">Gespräch mit Kristian
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <span class="cta-note">Für Maklerbüros mit 20 bis 30 aktiven Objekten. Bei mehr bauen wir dir ein eigenes Paket.</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -59,6 +64,28 @@
       <div><b>Handoff ans Team</b><span>Was der Mitarbeiter nicht weiss, landet bei der richtigen Person. Ein Satz reicht.</span></div>
       <div><b>Reporting fürs Büro</b><span>Anfragen, Antwortzeiten, Termine und Absagegründe pro Objekt auf einen Blick.</span></div>
     </div>
+  </div>
+</section>
+
+<section id="gespraech">
+  <div class="wrap form-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Gespräch anfragen</p>
+      <h2>Wie viele Objekte hast du gerade online?</h2>
+      <div class="contact-card">
+        <img src="assets/team-kristian.jpg" alt="Kristian Dobro" width="120" height="120">
+        <div><strong>Kristian Dobro</strong><p class="muted">Sales. Er ruft dich an und klärt mit dir, wie viele Postfächer verbunden werden.</p></div>
+      </div>
+    </div>
+    <!-- Beim Livegang: Formular in Supabase-Tabelle «buero_anfragen» speichern und Kristian per Mail benachrichtigen. -->
+    <form id="buero-form" novalidate>
+      <label for="f-name">Name<input id="f-name" name="name" autocomplete="name" required></label>
+      <label for="f-buero">Büro<input id="f-buero" name="buero" autocomplete="organization" required></label>
+      <label for="f-objekte">Anzahl aktive Objekte<input id="f-objekte" name="objekte" type="number" min="1" inputmode="numeric" required></label>
+      <label for="f-tel">Telefon<input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></label>
+      <button class="btn" type="submit">Gespräch mit Kristian</button>
+      <p class="form-msg" id="form-msg" hidden>Vorschau: Das Formular wird beim Livegang angebunden.</p>
+    </form>
   </div>
 </section>
 </main>
