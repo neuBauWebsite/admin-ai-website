@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Büro-Paket · Admin-AI</title>
+<meta name="description" content="Für Maklerbüros mit 20 bis 30 aktiven Objekten: Du zahlst 20 Objekte, du bekommst 30.">
+<link rel="icon" href="assets/logo-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="logo-on-light" src="assets/logo-dark.png" alt="">
+      <img class="logo-on-dark" src="assets/logo-light.png" alt="">
+      Admin-AI
+    </a>
+    <a class="top-link" href="index.html#produkte">← Zurück</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap form-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Büro-Paket · 20 bis 30 aktive Objekte</p>
+      <h1>Du zahlst 20 Objekte, du bekommst 30.</h1>
+      <p class="lead">Ein Mitarbeiter pro Objekt, mehrere Benutzer, Handoff ans ganze Team, Reporting fürs Büro, Einrichtung durch uns vor Ort.</p>
+      <p class="muted">Für Maklerbüros mit 20 bis 30 aktiven Objekten. Bei mehr bauen wir dir ein eigenes Paket.</p>
+      <div class="contact-card">
+        <img src="assets/team-kristian.jpg" alt="Kristian Dobro" width="120" height="120">
+        <div><strong>Kristian Dobro</strong><p class="muted">Sales. Er ruft dich an und klärt mit dir, wie viele Postfächer verbunden werden.</p></div>
+      </div>
+    </div>
+
+    <!-- Beim Livegang: Formular in Supabase-Tabelle «buero_anfragen» speichern und Kristian per Mail benachrichtigen. -->
+    <form id="buero-form" novalidate>
+      <h3>Gespräch anfragen</h3>
+      <label for="f-name">Name<input id="f-name" name="name" autocomplete="name" required></label>
+      <label for="f-buero">Büro<input id="f-buero" name="buero" autocomplete="organization" required></label>
+      <label for="f-objekte">Anzahl aktive Objekte<input id="f-objekte" name="objekte" type="number" min="1" inputmode="numeric" required></label>
+      <label for="f-tel">Telefon<input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></label>
+      <button class="btn" type="submit">Gespräch mit Kristian</button>
+      <p class="form-msg" id="form-msg" hidden>Vorschau: Das Formular wird beim Livegang angebunden.</p>
+    </form>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Warum ein Büro das braucht</p><h2>2'000+ Anfragen in zwei Wochen. Und jeder antwortet anders.</h2></div>
+    <div class="zero">
+      <div><b>Ein Ton fürs ganze Büro</b><span>Jede Anfrage in unter 15 Minuten, in einem Ton, egal wer gerade in der Besichtigung ist.</span></div>
+      <div><b>Handoff ans Team</b><span>Was der Mitarbeiter nicht weiss, landet bei der richtigen Person. Ein Satz reicht.</span></div>
+      <div><b>Reporting fürs Büro</b><span>Anfragen, Antwortzeiten, Termine und Absagegründe pro Objekt auf einen Blick.</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 neuBau.Website KLG · Daten in der Schweiz</span>
+    <nav aria-label="Fusszeile">
+      <a href="index.html">Startseite</a>
+      <a href="produkt.html">Der 15-Minuten-Mitarbeiter</a>
+      <a href="#impressum">Impressum</a>
+      <a href="#datenschutz">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('buero-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('form-msg').hidden = false;
+  });
+</script>
+</body>
+</html>
