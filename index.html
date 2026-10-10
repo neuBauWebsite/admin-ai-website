@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261010a">
+<link rel="stylesheet" href="assets/site.css?v=20261010b">
 </head>
 <body>
 
@@ -134,10 +134,10 @@
     <div class="steps steps-row" id="steps-row">
       <div class="step"><h3>Antwortet</h3><p>Beantwortet Anfragen und kommuniziert in deinem Namen. Er kennt das Objekt und nutzt alle Dokumente, um Fragen zu beantworten, vom Grundbuchauszug bis zu den Protokollen der STWEG-Versammlung.</p></div>
       <div class="step"><h3>Fasst nach</h3><p>Bleibt mit Interessenten in Kontakt und fasst eigenständig nach. Dabei berücksichtigt er den gesamten bisherigen Gesprächsverlauf.</p></div>
-      <div class="step"><h3>Fragt dich</h3><p>Bei wichtigen Entscheidungen holt er dein Einverständnis ein. Ein kurzer Hinweis von dir genügt, die fertige Antwort übernimmt er.</p></div>
       <div class="step"><h3>Koordiniert Termine</h3><p>Kümmert sich um Terminanfragen, gleicht Terminwünsche mit deinem Kalender ab und sendet 24h vorher eine Terminerinnerung.</p></div>
+      <div class="step"><h3>Findet Mandate</h3><p>Er fragt Interessenten, ob sie vor dem Kauf noch eine Immobilie verkaufen müssen, und informiert dich über versteckte Mandate.</p></div>
       <div class="step"><h3>Merkt sich Suchprofile</h3><p>Ist ein Interessent nicht interessiert, fragt er nach seinen Suchkriterien und legt sie in der Datenbank ab. Passt ein anderes Objekt, schlägt er dir den Interessenten vor.</p></div>
-      <div class="step"><h3>Findet Mandate</h3><p>Fehlt die Information noch, fragt er nach, ob der Interessent zuerst ein eigenes Haus oder eine Wohnung verkaufen muss. Dann informiert er dich, wo sich ein neues Mandat versteckt, damit du keine Chance verpasst.</p></div>
+      <div class="step"><h3>Fragt dich</h3><p>Bei wichtigen Entscheidungen holt er dein Einverständnis ein. Ein kurzer Hinweis von dir genügt, die fertige Antwort übernimmt er.</p></div>
     </div>
     <button class="steps-next steps-prev" type="button" aria-label="Vorherige Schritte anzeigen">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
@@ -294,6 +294,15 @@
     box.querySelector('.steps-next:not(.steps-prev)').addEventListener('click', function () { go(1); });
     box.querySelector('.steps-prev').addEventListener('click', function () { go(-1); });
     row.addEventListener('scroll', update, { passive: true });
+    // Mausrad: über den Schritten nach rechts/links scrollen, am Ende normal weiter
+    row.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+      var max = row.scrollWidth - row.clientWidth;
+      if ((e.deltaY > 0 && row.scrollLeft < max - 1) || (e.deltaY < 0 && row.scrollLeft > 1)) {
+        e.preventDefault();
+        row.scrollLeft += e.deltaY;
+      }
+    }, { passive: false });
     window.addEventListener('resize', update);
     update();
   })();
