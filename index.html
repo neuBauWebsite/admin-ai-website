@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261009e">
+<link rel="stylesheet" href="assets/site.css?v=20261010a">
 </head>
 <body>
 
@@ -128,13 +128,22 @@
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">So arbeitet dein Mitarbeiter</p>
-      <h2>4 Schritte, die dir täglich Arbeit abnehmen.</h2>
+      <h2>5 Schritte, die dir täglich Arbeit abnehmen.</h2>
     </div>
-    <div class="steps">
+    <div class="steps-scroll" id="steps-scroll">
+    <div class="steps steps-row" id="steps-row">
       <div class="step"><h3>Antwortet</h3><p>Beantwortet Anfragen und kommuniziert in deinem Namen. Er kennt das Objekt und nutzt alle Dokumente, um Fragen zu beantworten, vom Grundbuchauszug bis zu den Protokollen der STWEG-Versammlung.</p></div>
       <div class="step"><h3>Fasst nach</h3><p>Bleibt mit Interessenten in Kontakt und fasst eigenständig nach. Dabei berücksichtigt er den gesamten bisherigen Gesprächsverlauf.</p></div>
       <div class="step"><h3>Fragt dich</h3><p>Bei wichtigen Entscheidungen holt er dein Einverständnis ein. Ein kurzer Hinweis von dir genügt, die fertige Antwort übernimmt er.</p></div>
       <div class="step"><h3>Koordiniert Termine</h3><p>Kümmert sich um Terminanfragen, gleicht Terminwünsche mit deinem Kalender ab und sendet 24h vorher eine Terminerinnerung.</p></div>
+      <div class="step"><h3>Merkt sich Suchprofile</h3><p>Ist ein Interessent nicht interessiert, fragt er nach seinen Suchkriterien und legt sie in der Datenbank ab. Passt ein anderes Objekt, schlägt er dir den Interessenten vor.</p></div>
+    </div>
+    <button class="steps-next steps-prev" type="button" aria-label="Vorherige Schritte anzeigen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    </button>
+    <button class="steps-next" type="button" aria-label="Weitere Schritte anzeigen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
     </div>
   </div>
 </section>
@@ -275,5 +284,18 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var box = document.getElementById('steps-scroll'), row = document.getElementById('steps-row');
+    if (!box || !row) return;
+    function update() { box.classList.toggle('at-end', row.scrollLeft + row.clientWidth >= row.scrollWidth - 4); box.classList.toggle('at-start', row.scrollLeft <= 4); }
+    function go(dir) { var step = row.querySelector('.step'); row.scrollBy({ left: dir * (step.getBoundingClientRect().width + 32), behavior: 'smooth' }); }
+    box.querySelector('.steps-next:not(.steps-prev)').addEventListener('click', function () { go(1); });
+    box.querySelector('.steps-prev').addEventListener('click', function () { go(-1); });
+    row.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+</script>
 </body>
 </html>
