@@ -377,3 +377,33 @@ form .btn { width: 100%; margin-top: 6px; }
 .hero-solo .lead { max-width: 52ch; }
 .hero-solo .cta-block { justify-self: start; align-items: center; text-align: center; }
 .after-proof { padding-top: clamp(24px, 4vw, 48px); }
+
+/* Schweizer Karte mit Suchprofilen */
+.chmap { position: relative; width: 100%; max-width: 980px; margin: clamp(24px, 4vw, 48px) auto 0; aspect-ratio: 1000 / 674.6; }
+.chmap-lines, .chmap-lines img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ch-kantone { opacity: .25; }
+.ch-umriss { opacity: .6; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chmap-lines img { filter: invert(1) hue-rotate(180deg); } }
+:root[data-theme="dark"] .chmap-lines img { filter: invert(1) hue-rotate(180deg); }
+.chmap-note .on-touch { display: none; }
+@media (hover: none) { .chmap-note .on-hover { display: none; } .chmap-note .on-touch { display: inline; } }
+.chmap-pins { position: absolute; inset: 0; }
+.pin { position: absolute; width: 30px; height: 30px; margin: -30px 0 0 -15px; padding: 0; border: 0; background: none; cursor: pointer; z-index: 1; }
+.pin::before { content: ""; position: absolute; left: 3px; top: 0; width: 24px; height: 24px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--accent); box-shadow: 0 4px 10px rgba(10, 30, 60, .25); transition: transform .2s; }
+.pin::after { content: ""; position: absolute; left: 11px; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+.pin { animation: pin-drop .5s var(--d, 0s) both; }
+@keyframes pin-drop { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+.pin:hover, .pin:focus-visible, .pin.open { z-index: 5; }
+.pin:hover::before, .pin:focus-visible::before, .pin.open::before { transform: rotate(-45deg) scale(1.25); box-shadow: 0 0 0 8px rgba(26, 113, 255, .18), 0 6px 14px rgba(10, 30, 60, .3); }
+.pin-card { position: absolute; left: 50%; bottom: calc(100% + 12px); width: 230px; transform: translate(-50%, 6px); opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; display: grid; gap: 3px; text-align: left; padding: 14px 16px; border-radius: 14px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(10, 30, 60, .2); font: 400 .9rem/1.4 var(--font-body, inherit); }
+.pin-card b { font-weight: 700; font-size: .98rem; }
+.pin-card span { color: var(--muted); }
+.pin-card span:nth-of-type(2) { color: var(--accent); font-weight: 600; }
+.pin-l .pin-card { left: auto; right: -8px; transform: translate(0, 6px); }
+.pin-r .pin-card { left: -8px; transform: translate(0, 6px); }
+.pin-below .pin-card { bottom: auto; top: calc(100% + 8px); }
+.pin:hover .pin-card, .pin:focus-visible .pin-card, .pin.open .pin-card { opacity: 1; transform: translate(-50%, 0); }
+.pin-l:hover .pin-card, .pin-l:focus-visible .pin-card, .pin-l.open .pin-card, .pin-r:hover .pin-card, .pin-r:focus-visible .pin-card, .pin-r.open .pin-card { transform: none; }
+.chmap-note { text-align: center; margin-top: 16px; font-size: .92rem; }
+@media (max-width: 640px) { .pin { width: 22px; height: 22px; margin: -22px 0 0 -11px; } .pin::before { left: 2px; width: 18px; height: 18px; } .pin::after { left: 8px; top: 6px; width: 6px; height: 6px; } .pin-card { width: 190px; font-size: .82rem; } }
+@media (prefers-reduced-motion: reduce) { .pin { animation: none; } }
