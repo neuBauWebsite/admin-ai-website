@@ -395,10 +395,11 @@ form .btn { width: 100%; margin-top: 6px; }
 @keyframes pin-drop { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
 .pin:hover, .pin:focus-visible, .pin.open { z-index: 5; }
 .pin:hover::before, .pin:focus-visible::before, .pin.open::before { transform: rotate(-45deg) scale(1.25); box-shadow: 0 0 0 8px rgba(26, 113, 255, .18), 0 6px 14px rgba(10, 30, 60, .3); }
-.pin-card { position: absolute; left: 50%; bottom: calc(100% + 12px); width: 230px; transform: translate(-50%, 6px); opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; display: grid; gap: 3px; text-align: left; padding: 14px 16px; border-radius: 14px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(10, 30, 60, .2); font: 400 .9rem/1.4 var(--font-body, inherit); }
+.pin-card { position: absolute; left: 50%; bottom: calc(100% + 12px); width: 260px; transform: translate(-50%, 6px); opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; display: grid; gap: 3px; text-align: left; padding: 14px 16px; border-radius: 14px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(10, 30, 60, .2); font: 400 .9rem/1.4 var(--font-body, inherit); }
 .pin-card b { font-weight: 700; font-size: .98rem; }
 .pin-card span { color: var(--muted); }
 .pin-card span:nth-of-type(2) { color: var(--accent); font-weight: 600; }
+.pin-card span:nth-of-type(1) { color: var(--ink); }
 .pin-l .pin-card { left: auto; right: -8px; transform: translate(0, 6px); }
 .pin-r .pin-card { left: -8px; transform: translate(0, 6px); }
 .pin-below .pin-card { bottom: auto; top: calc(100% + 8px); }
