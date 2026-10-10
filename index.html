@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261010g">
+<link rel="stylesheet" href="assets/site.css?v=20261010h">
 </head>
 <body>
 
@@ -318,8 +318,43 @@
   </div>
 </section>
 
+<!-- Teste uns: echtes Inserat, Frage kopieren, Antwort in 15 Minuten -->
+<section id="testen" class="test-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Teste uns jetzt</p>
+      <h2>Stell unserem KI-Mitarbeiter eine schwierige Frage.</h2>
+      <p class="lead">Kopiere eine der beiden Fragen und schick sie über das Kontaktformular dieses echten Inserats. Keine Vorlage der Welt kann sie beantworten.</p>
+    </div>
+    <div class="testgrid">
+      <a class="inserat" href="https://www.homegate.ch/kaufen/4003521392" target="_blank" rel="noopener">
+        <span class="inserat-img"><img src="https://media2.homegate.ch/f_auto/t_web_dp_large/listings/v2/h530138/4003521392/image/7fa7b7fecec83a4345703f8291b0afce.jpg" alt="5.5-Zimmer-Wohnung am Feldhof 6 in Zug" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span>
+        <span class="inserat-body">
+          <span class="inserat-src">Homegate · Inserat 4003521392</span>
+          <b>5.5-Zimmer-Wohnung in Zug</b>
+          <span class="muted">Feldhof 6, 6300 Zug · 137 m² · 2. OG · Wintergarten</span>
+          <span class="go">Inserat öffnen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+      <div class="questions">
+        <div class="q">
+          <span class="q-label">Frage zum Grundbuchauszug</span>
+          <p>Guten Tag, ich interessiere mich für die 5.5-Zimmer-Wohnung am Feldhof 6 in Zug. Sind im Grundbuchauszug Dienstbarkeiten oder Grundpfandrechte eingetragen, die mich als Käufer betreffen würden, zum Beispiel ein Wegrecht oder ein Näherbaurecht? Und wie hoch ist die Wertquote der Wohnung?</p>
+          <button class="q-copy" type="button">Frage kopieren</button>
+        </div>
+        <div class="q">
+          <span class="q-label">Frage zum STWEG-Protokoll</span>
+          <p>Guten Tag, ich interessiere mich für die 5.5-Zimmer-Wohnung am Feldhof 6 in Zug. Wurden in den letzten Protokollen der Stockwerkeigentümerversammlung grössere Sanierungen oder Sonderumlagen beschlossen? Und wie hoch ist der aktuelle Stand des Erneuerungsfonds?</p>
+          <button class="q-copy" type="button">Frage kopieren</button>
+        </div>
+        <p class="q-note"><strong>Du erhältst innerhalb von 15 Minuten eine Antwort</strong> in dein Postfach, zwischen 7 und 21 Uhr, auch am Wochenende.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Beweis: hier kommen drei echte, anonymisierte Mail-Verläufe hin -->
-<section>
+<section class="band">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Echte Verläufe</p>
@@ -335,7 +370,7 @@
 </section>
 
 <!-- Team -->
-<section class="band">
+<section>
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Wer dahinter steht</p>
@@ -362,7 +397,7 @@
 </section>
 
 <!-- FAQ: die Sätze aus dem Angebots-Dokument -->
-<section>
+<section class="band">
   <div class="wrap">
     <div class="sec-head"><p class="eyebrow">Fragen</p><h2>Was Makler uns fragen.</h2></div>
     <div class="faq">
@@ -423,6 +458,18 @@
     var pin = e.target.closest('.pin');
     document.querySelectorAll('.pin.open').forEach(function (p) { if (p !== pin) p.classList.remove('open'); });
     if (pin) pin.classList.toggle('open');
+  });
+</script>
+<script>
+  // Testfragen kopieren
+  document.querySelectorAll('.q-copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.parentNode.querySelector('p').textContent;
+      function done() { b.textContent = 'Kopiert ✓'; b.classList.add('ok'); setTimeout(function () { b.textContent = 'Frage kopieren'; b.classList.remove('ok'); }, 2000); }
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () { fallback(); });
+      else fallback();
+      function fallback() { var a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); done(); } catch (e) {} a.remove(); }
+    });
   });
 </script>
 </body>
