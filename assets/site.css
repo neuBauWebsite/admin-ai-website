@@ -408,3 +408,10 @@ form .btn { width: 100%; margin-top: 6px; }
 .chmap-note { text-align: center; margin-top: 16px; font-size: .92rem; }
 @media (max-width: 640px) { .pin { width: 22px; height: 22px; margin: -22px 0 0 -11px; } .pin::before { left: 2px; width: 18px; height: 18px; } .pin::after { left: 8px; top: 6px; width: 6px; height: 6px; } .pin-card { width: 190px; font-size: .82rem; } }
 @media (prefers-reduced-motion: reduce) { .pin { animation: none; } }
+/* Kartenabschnitt passt auf einen Bildschirm */
+.map-sec { padding-block: clamp(32px, 4vw, 48px); }
+.map-sec .sec-head { max-width: 980px; gap: 10px; margin-bottom: 0; }
+.map-sec h2 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
+.map-sec .lead { max-width: 80ch; font-size: clamp(.98rem, 1.2vw, 1.08rem); line-height: 1.5; }
+.map-sec .chmap { margin-top: 16px; width: min(100%, 860px, calc((100svh - 385px) * 1.482)); min-width: min(100%, 320px); }
+.map-sec .chmap-note { margin-top: 8px; font-size: .85rem; line-height: 1.4; }
