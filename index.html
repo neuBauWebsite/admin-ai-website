@@ -294,18 +294,6 @@
     box.querySelector('.steps-next:not(.steps-prev)').addEventListener('click', function () { go(1); });
     box.querySelector('.steps-prev').addEventListener('click', function () { go(-1); });
     row.addEventListener('scroll', update, { passive: true });
-    var locked = false;
-    // Mausrad: über den Schritten nach rechts/links scrollen, am Ende normal weiter
-    row.addEventListener('wheel', function (e) {
-      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
-      var max = row.scrollWidth - row.clientWidth;
-      if ((e.deltaY > 0 && row.scrollLeft < max - 1) || (e.deltaY < 0 && row.scrollLeft > 1)) {
-        e.preventDefault();
-        if (locked) return;
-        locked = true; go(e.deltaY > 0 ? 1 : -1);
-        setTimeout(function () { locked = false; }, 450);
-      }
-    }, { passive: false });
     window.addEventListener('resize', update);
     update();
   })();
