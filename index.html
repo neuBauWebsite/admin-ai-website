@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261010b">
+<link rel="stylesheet" href="assets/site.css?v=20261010c">
 </head>
 <body>
 
@@ -294,13 +294,16 @@
     box.querySelector('.steps-next:not(.steps-prev)').addEventListener('click', function () { go(1); });
     box.querySelector('.steps-prev').addEventListener('click', function () { go(-1); });
     row.addEventListener('scroll', update, { passive: true });
+    var locked = false;
     // Mausrad: über den Schritten nach rechts/links scrollen, am Ende normal weiter
     row.addEventListener('wheel', function (e) {
       if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
       var max = row.scrollWidth - row.clientWidth;
       if ((e.deltaY > 0 && row.scrollLeft < max - 1) || (e.deltaY < 0 && row.scrollLeft > 1)) {
         e.preventDefault();
-        row.scrollLeft += e.deltaY;
+        if (locked) return;
+        locked = true; go(e.deltaY > 0 ? 1 : -1);
+        setTimeout(function () { locked = false; }, 450);
       }
     }, { passive: false });
     window.addEventListener('resize', update);

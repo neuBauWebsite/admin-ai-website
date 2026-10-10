@@ -152,7 +152,6 @@ section { padding-block: clamp(64px, 9vw, 112px); }
 .steps.steps-row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: calc((100% - 3 * 32px) / 4); gap: 32px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .steps-row::-webkit-scrollbar { display: none; }
 .steps-row .step { scroll-snap-align: start; }
-@media (hover: hover) { .steps.steps-row { scroll-snap-type: none; } }
 .steps-scroll::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 96px; background: linear-gradient(to right, transparent, var(--bg)); pointer-events: none; transition: opacity .2s; }
 .steps-next { position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 1; width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.18); opacity: 0; transition: opacity .2s; }
 .steps-next svg { width: 22px; height: 22px; }
