@@ -436,12 +436,6 @@ form .btn { width: 100%; margin-top: 6px; }
 .q-copy:hover, .q-copy.ok { background: var(--accent); color: var(--accent-ink); }
 .q-note { margin: 4px 0 0; padding: 16px 20px; border-radius: 16px; background: var(--accent-soft); }
 @media (max-width: 860px) { .testgrid { grid-template-columns: 1fr; } }
-/* Test-Abschnitt etwas kompakter */
-.test-sec { padding-block: clamp(32px, 4vw, 48px); }
-.test-sec .sec-head { max-width: 900px; margin-bottom: clamp(24px, 3vw, 32px); }
-.test-sec h2 { font-size: clamp(1.8rem, 3.4vw, 2.7rem); }
-.test-sec .questions { gap: 12px; }
-.q-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
 /* Echte Verläufe */
 
@@ -455,5 +449,3 @@ form .btn { width: 100%; margin-top: 6px; }
 .ref figcaption { display: grid; gap: 2px; padding-top: 16px; border-top: 1px solid var(--line); }
 .ref figcaption span { font-size: .9rem; color: var(--muted); }
 @media (max-width: 760px) { .refs { grid-template-columns: 1fr; } }
-.test-sec .lead { max-width: 68ch; }
-.test-sec .q p { line-height: 1.6; }
