@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261010k">
+<link rel="stylesheet" href="assets/site.css?v=20261011a">
 </head>
 <body>
 
@@ -454,6 +454,21 @@
     row.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
     update();
+  })();
+</script>
+<script>
+  // Karte: startet leer, Pins erscheinen nacheinander, sobald die Karte im Bild ist
+  (function () {
+    var map = document.querySelector('.chmap');
+    if (!map || !('IntersectionObserver' in window)) return;
+    var pins = Array.prototype.slice.call(map.querySelectorAll('.pin'));
+    for (var i = pins.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = pins[i]; pins[i] = pins[j]; pins[j] = t; }
+    pins.forEach(function (p, i) { p.style.setProperty('--d', (0.3 + i * 0.12).toFixed(2) + 's'); });
+    map.classList.add('wait');
+    var io = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { map.classList.add('go'); io.disconnect(); }
+    }, { threshold: 0.35 });
+    io.observe(map);
   })();
 </script>
 <script>
