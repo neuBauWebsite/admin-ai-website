@@ -452,3 +452,18 @@ form .btn { width: 100%; margin-top: 6px; }
 /* Test-Abschnitt: Untertitel auf zwei Zeilen */
 .test-sec .sec-head { max-width: 1000px; }
 .test-sec .lead { max-width: 64ch; }
+/* Drei Wege = heutiger Zustand (gedämpft), vierter Weg = die Antwort darauf */
+.old-ways .opt { position: relative; background: transparent; border-style: dashed; }
+.old-ways .opt::after { content: "✕"; position: absolute; top: 18px; right: 18px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; font-weight: 700; color: #c2415a; background: rgba(194, 65, 90, .1); }
+.old-ways .opt h3 { color: var(--muted); }
+.merge { display: block; width: 100%; height: 56px; margin-top: 4px; overflow: visible; }
+.merge path { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 5 6; vector-effect: non-scaling-stroke; opacity: .7; }
+.way4.way4-answer { margin-top: 0; grid-template-columns: repeat(3, 1fr); gap: 20px 16px; align-items: stretch; }
+.way4-answer .way4-head { grid-column: 1 / -1; text-align: center; max-width: 760px; justify-self: center; }
+.way4-answer ul { display: contents; }
+.way4-answer li { padding: 14px 16px; border-radius: 14px; background: var(--bg); }
+@media (max-width: 720px) {
+  .merge { display: none; }
+  .way4.way4-answer { margin-top: 20px; grid-template-columns: 1fr; }
+  .way4-answer .way4-head { text-align: left; }
+}
