@@ -9,7 +9,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261011f">
+<link rel="stylesheet" href="assets/site.css?v=20261012a">
+<script>
+  // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
+  try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
 </head>
 <body>
 
@@ -488,6 +492,18 @@
       if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, function () { fallback(); });
       else fallback();
       function fallback() { var a = document.createElement('textarea'); a.value = t; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); done(); } catch (e) {} a.remove(); }
+    });
+  });
+</script>
+<script>
+  // Klick aufs Logo wechselt zwischen heller und dunkler Ansicht
+  document.querySelectorAll('.brand').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var r = document.documentElement, cur = r.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      r.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
     });
   });
 </script>

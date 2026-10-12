@@ -467,3 +467,4 @@ form .btn { width: 100%; margin-top: 6px; }
   .way4.way4-answer { margin-top: 20px; grid-template-columns: 1fr; }
   .way4-answer .way4-head { text-align: left; }
 }
+.brand { cursor: pointer; }
