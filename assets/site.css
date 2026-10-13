@@ -11,8 +11,8 @@
   --accent-ink: #ffffff;
   --accent-soft: #e6efff;
   --ok: #128a5a;
-  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Figtree", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Space Grotesk", "Figtree", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --wrap: 1120px;
   --radius: 14px;
@@ -475,3 +475,5 @@ form .btn { width: 100%; margin-top: 6px; }
 .final h2.final-claim { max-width: none; font-family: "Space Grotesk", var(--font-display); font-weight: 500; letter-spacing: -0.02em; font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1.2; }
 .final-claim span { display: block; }
 .final-claim span + span { color: var(--accent); }
+/* Schrift wie auf admin-ai.ch: Space Grotesk überall, Titel in mittlerer Stärke */
+h1, h2 { font-weight: 500; }
