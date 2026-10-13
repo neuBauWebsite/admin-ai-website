@@ -504,3 +504,10 @@ h1, h2 { font-weight: 500; }
 .tier-note b { font-family: var(--font-display); font-weight: 600; }
 .tier-note span { color: var(--muted); font-size: .95rem; }
 @media (max-width: 980px) { .tiers { grid-template-columns: 1fr; max-width: 560px; } .tier-note { justify-content: start; text-align: left; } }
+/* Schalter monatlich / einmalig */
+.billing { display: inline-flex; gap: 4px; padding: 4px; margin-bottom: 20px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.billing button { border: 0; background: transparent; color: var(--muted); font: 600 .9rem/1 var(--font-body); padding: 10px 16px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+.billing button.on { background: var(--accent); color: var(--accent-ink); }
+.billing .gift { font-size: .72rem; font-weight: 700; padding: 4px 8px; border-radius: 999px; background: rgba(18, 138, 90, .14); color: var(--ok); }
+.billing button.on .gift { background: rgba(255, 255, 255, .2); color: #fff; }
+@media (max-width: 420px) { .billing button { padding: 9px 12px; font-size: .85rem; } .billing .gift { display: none; } .billing button[data-bill="e"]::after { content: "· 2 Mt. gratis"; font-size: .75rem; } }

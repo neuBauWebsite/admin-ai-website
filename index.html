@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261013h">
+<link rel="stylesheet" href="assets/site.css?v=20261013i">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -68,9 +68,13 @@
       <p class="eyebrow">Wähle deinen Mitarbeiter</p>
       <h2>Wie viele Objekte hast du gerade online?</h2>
     </div>
+    <div class="billing" role="group" aria-label="Zahlungsart">
+        <button type="button" class="on" data-bill="m" aria-pressed="true">Monatlich</button>
+        <button type="button" data-bill="e" aria-pressed="false">Einmalig <span class="gift">2 Monate geschenkt</span></button>
+      </div>
     <div class="tiers">
       <article class="tier main">
-        <div class="tier-top"><span class="tier-range">1–20 Objekte</span><span class="tier-price"><b>CHF 79</b><small>pro Objekt / Monat</small></span></div>
+        <div class="tier-top"><span class="tier-range">1–20 Objekte</span><span class="tier-price" data-pm="<b>CHF 79</b><small>pro Objekt / Monat</small>" data-pe="<b>CHF 237</b><small>einmalig pro Objekt</small>"><b>CHF 79</b><small>pro Objekt / Monat</small></span></div>
         <h3>KI-Mitarbeiter</h3>
         <p class="tier-aud">Für Einzelmakler und kleinere Maklerbüros.</p>
         <div class="tier-body"><p>Jedes deiner Objekte erhält einen eigenen KI-Mitarbeiter. Er beantwortet Anfragen, fasst bei Interessenten persönlich nach und koordiniert Besichtigungen. So bleibt dir mehr Zeit für das, was wirklich zählt: neue Mandate gewinnen und Immobilien verkaufen.</p></div>
@@ -80,7 +84,7 @@
         </div>
       </article>
       <article class="tier">
-        <div class="tier-top"><span class="tier-range">21–50 Objekte</span><span class="tier-price"><b>CHF 49</b><small>pro Objekt / Monat</small></span></div>
+        <div class="tier-top"><span class="tier-range">21–50 Objekte</span><span class="tier-price" data-pm="<b>CHF 49</b><small>pro Objekt / Monat</small>" data-pe="<b>CHF 147</b><small>einmalig pro Objekt</small>"><b>CHF 49</b><small>pro Objekt / Monat</small></span></div>
         <h3>KI-Mitarbeiter Team</h3>
         <p class="tier-aud">Für Maklerteams mit grösseren Portfolios.</p>
         <div class="tier-body"><p>Viele Objekte, zahlreiche Anfragen und ein Team, das den Überblick behalten muss? Deine KI-Mitarbeiter übernehmen die Interessentenbetreuung und koordinieren Besichtigungen. Dein Team bleibt informiert und kann sich auf den Verkauf konzentrieren.</p><p>Je mehr Objekte du betreust, desto günstiger wird dein KI-Mitarbeiter.</p></div>
@@ -102,7 +106,7 @@
     </div>
     <div class="tier-note">
       <b>Maximal 5 Monate bezahlen. Dauerhaft profitieren.</b>
-      <span>Du bezahlst deinen KI-Mitarbeiter pro Objekt maximal fünf Monate lang. Danach arbeitet er für dieses Objekt kostenlos weiter.</span>
+      <span data-pm="Du bezahlst deinen KI-Mitarbeiter pro Objekt maximal fünf Monate lang. Danach arbeitet er für dieses Objekt kostenlos weiter." data-pe="Mit der Einmalzahlung bezahlst du nur drei statt fünf Monate. Danach arbeitet er für dieses Objekt kostenlos weiter.">Du bezahlst deinen KI-Mitarbeiter pro Objekt maximal fünf Monate lang. Danach arbeitet er für dieses Objekt kostenlos weiter.</span>
     </div>
     </div>
   </div>
@@ -300,10 +304,14 @@
     <div>
       <p class="eyebrow">Preise</p>
       <h2 style="margin:14px 0 28px">Drei Pakete. Mehr gibt es nicht.</h2>
+      <div class="billing" role="group" aria-label="Zahlungsart">
+        <button type="button" class="on" data-bill="m" aria-pressed="true">Monatlich</button>
+        <button type="button" data-bill="e" aria-pressed="false">Einmalig <span class="gift">2 Monate geschenkt</span></button>
+      </div>
       <ul class="price-list">
         <li class="free"><span class="what">Erstes Objekt<small>Ganz, bis es verkauft ist. Nicht als Test.</small></span><span class="amt">gratis</span></li>
-        <li><span class="what">KI-Mitarbeiter<small>1–20 Objekte · jederzeit kündbar</small></span><span class="amt">CHF 79<small>pro Objekt / Monat</small></span></li>
-        <li><span class="what">KI-Mitarbeiter Team<small>21–50 Objekte · jederzeit kündbar</small></span><span class="amt">CHF 49<small>pro Objekt / Monat</small></span></li>
+        <li><span class="what">KI-Mitarbeiter<small data-pm="1–20 Objekte · jederzeit kündbar" data-pe="1–20 Objekte · 3 Monate bezahlen, 2 geschenkt">1–20 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 79<small>pro Objekt / Monat</small>" data-pe="CHF 237<small>einmalig pro Objekt</small>">CHF 79<small>pro Objekt / Monat</small></span></li>
+        <li><span class="what">KI-Mitarbeiter Team<small data-pm="21–50 Objekte · jederzeit kündbar" data-pe="21–50 Objekte · 3 Monate bezahlen, 2 geschenkt">21–50 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 49<small>pro Objekt / Monat</small>" data-pe="CHF 147<small>einmalig pro Objekt</small>">CHF 49<small>pro Objekt / Monat</small></span></li>
         <li><span class="what">KI-Mitarbeiter Enterprise<small>Ab 51 Objekten · <a href="buero.html">Enterprise ansehen</a></small></span><span class="amt" style="font-size:1.1rem">auf Anfrage</span></li>
       </ul>
       <p class="choice muted">Je mehr Objekte du hast, desto weniger zahlst du pro Objekt.</p>
@@ -550,6 +558,16 @@
       var next = cur === 'dark' ? 'light' : 'dark';
       r.setAttribute('data-theme', next);
       try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  });
+</script>
+<script>
+  // Schalter monatlich / einmalig (3 Monatsbeiträge im Voraus = 2 Monate geschenkt)
+  document.querySelectorAll('.billing button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var k = b.getAttribute('data-bill');
+      document.querySelectorAll('.billing button').forEach(function (x) { var on = x.getAttribute('data-bill') === k; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
+      document.querySelectorAll('[data-pm]').forEach(function (el) { el.innerHTML = el.getAttribute(k === 'e' ? 'data-pe' : 'data-pm'); });
     });
   });
 </script>
