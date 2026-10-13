@@ -471,12 +471,7 @@ form .btn { width: 100%; margin-top: 6px; }
 /* Zahlen blenden beim Hochzählen ein */
 .proofbar-grid.count-wait { opacity: 0; transition: opacity .6s ease-out; }
 .proofbar-grid.count-go { opacity: 1; }
-/* Hero-Titel auf zwei Zeilen */
-@media (min-width: 721px) {
-  .hero h1.h1-2 { font-size: clamp(1.9rem, 3.65vw, 3rem); max-width: none; text-wrap: nowrap; }
-  .h1-2 span { display: block; white-space: nowrap; }
-}
 /* Schlusssatz wie auf admin-ai.ch: zwei Zeilen, zweite in Blau */
-.final h2.final-claim { max-width: none; font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1.2; }
+.final h2.final-claim { max-width: none; font-family: "Space Grotesk", var(--font-display); font-weight: 500; letter-spacing: -0.02em; font-size: clamp(1.5rem, 3vw, 2.3rem); line-height: 1.2; }
 .final-claim span { display: block; }
 .final-claim span + span { color: var(--accent); }
