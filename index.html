@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261012a">
+<link rel="stylesheet" href="assets/site.css?v=20261013a">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -458,6 +458,31 @@
     row.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
     update();
+  })();
+</script>
+<script>
+  // Zahlen: blenden ein und zählen von 0 hoch, sobald sie sichtbar werden (wie auf admin-ai.ch)
+  (function () {
+    var grid = document.querySelector('.proofbar-grid');
+    if (!grid || !('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var nums = Array.prototype.map.call(grid.querySelectorAll('b'), function (b) {
+      var m = b.innerHTML.match(/^([\d']+)(.*)$/);
+      return m ? { el: b, to: parseInt(m[1].replace(/'/g, ''), 10), rest: m[2] } : null;
+    }).filter(Boolean);
+    function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "'"); }
+    nums.forEach(function (n) { n.el.innerHTML = '0' + n.rest; });
+    grid.classList.add('count-wait');
+    var io = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      io.disconnect(); grid.classList.add('count-go');
+      var t0 = performance.now(), dur = 1000;
+      (function tick(t) {
+        var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+        nums.forEach(function (n) { n.el.innerHTML = fmt(Math.round(n.to * e)) + n.rest; });
+        if (k < 1) requestAnimationFrame(tick);
+      })(t0);
+    }, { threshold: 0.4 });
+    io.observe(grid);
   })();
 </script>
 <script>
