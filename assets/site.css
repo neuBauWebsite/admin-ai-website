@@ -494,7 +494,7 @@ h1, h2 { font-weight: 500; }
 .tier-body { flex: 1; display: grid; gap: 8px; align-content: start; }
 .tier-body p { margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.55; }
 .tier-foot { display: grid; gap: 12px; margin-top: 8px; }
-.tier-video { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: var(--accent-soft); color: var(--ink); text-decoration: none; font-size: .85rem; font-weight: 500; line-height: 1.3; }
+.tier-video { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: var(--accent-soft); color: var(--ink); text-decoration: none; font-size: .85rem; font-weight: 500; line-height: 1.3; white-space: nowrap; }
 .tier-video i { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
 .tier-video i::after { content: ""; border-left: 7px solid var(--accent-ink); border-top: 5px solid transparent; border-bottom: 5px solid transparent; margin-left: 2px; }
 .tier-video:hover { outline: 1.5px solid var(--accent); }
