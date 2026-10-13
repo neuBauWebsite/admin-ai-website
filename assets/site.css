@@ -480,3 +480,27 @@ h1, h2 { font-weight: 500; }
 /* Drei Pakete nebeneinander */
 .products.products-3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 980px) { .products.products-3 { grid-template-columns: 1fr; } }
+/* Paketkacheln: kompakt, gleiche Reihenfolge, gleiche Höhe */
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+.tier { display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--line); border-radius: 20px; background: var(--bg); min-width: 0; }
+.tier.main { border: 2px solid var(--accent); }
+.tier-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
+.tier-range { font: 600 .78rem/1.2 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+.tier-price { display: grid; justify-items: end; line-height: 1.1; }
+.tier-price b { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; }
+.tier-price small { font-size: .78rem; color: var(--muted); }
+.tier h3 { font-size: 1.35rem; }
+.tier-aud { margin: 0; font-weight: 700; font-size: .95rem; }
+.tier-body { flex: 1; display: grid; gap: 8px; align-content: start; }
+.tier-body p { margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.55; }
+.tier-foot { display: grid; gap: 12px; margin-top: 8px; }
+.tier-video { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: var(--accent-soft); color: var(--ink); text-decoration: none; font-size: .85rem; font-weight: 500; line-height: 1.3; }
+.tier-video i { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
+.tier-video i::after { content: ""; border-left: 7px solid var(--accent-ink); border-top: 5px solid transparent; border-bottom: 5px solid transparent; margin-left: 2px; }
+.tier-video:hover { outline: 1.5px solid var(--accent); }
+.tier-cta { display: inline-flex; align-items: center; gap: 8px; font-weight: 650; color: var(--accent); text-decoration: none; font-size: .95rem; }
+.tier-cta svg { width: 18px; height: 18px; flex: none; }
+.tier-note { margin-top: 16px; display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: baseline; justify-content: center; text-align: center; padding: 16px 20px; border-radius: 16px; background: var(--accent-soft); }
+.tier-note b { font-family: var(--font-display); font-weight: 600; }
+.tier-note span { color: var(--muted); font-size: .95rem; }
+@media (max-width: 980px) { .tiers { grid-template-columns: 1fr; max-width: 560px; } .tier-note { justify-content: start; text-align: left; } }
