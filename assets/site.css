@@ -477,3 +477,6 @@ form .btn { width: 100%; margin-top: 6px; }
 .final-claim span + span { color: var(--accent); }
 /* Schrift wie auf admin-ai.ch: Space Grotesk überall, Titel in mittlerer Stärke */
 h1, h2 { font-weight: 500; }
+/* Drei Pakete nebeneinander */
+.products.products-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 980px) { .products.products-3 { grid-template-columns: 1fr; } }
