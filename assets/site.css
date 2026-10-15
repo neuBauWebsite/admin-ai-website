@@ -510,4 +510,6 @@ h1, h2 { font-weight: 500; }
 .billing button.on { background: var(--accent); color: var(--accent-ink); }
 .billing .gift { font-size: .72rem; font-weight: 700; padding: 4px 8px; border-radius: 999px; background: rgba(18, 138, 90, .14); color: var(--ok); }
 .billing button.on .gift { background: rgba(255, 255, 255, .2); color: #fff; }
-@media (max-width: 420px) { .billing button { padding: 9px 12px; font-size: .85rem; } .billing .gift { display: none; } .billing button[data-bill="e"]::after { content: "· 2 Mt. gratis"; font-size: .75rem; } }
+@media (max-width: 420px) { .billing button { padding: 9px 12px; font-size: .85rem; } .billing .gift { display: none; } .billing button[data-bill="e"]::after { content: "· −30 %"; font-size: .75rem; } }
+.bill-note { margin: 16px 0 0; padding: 14px 18px; border-radius: 14px; background: var(--accent-soft); font-size: .92rem; line-height: 1.55; color: var(--ink); }
+.bill-note[hidden] { display: none; }

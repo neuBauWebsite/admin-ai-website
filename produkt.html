@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261013i">
+<link rel="stylesheet" href="assets/site.css?v=20261015a">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -92,14 +92,15 @@
       <p class="muted" style="max-width:46ch">Er beantwortet jede Kaufanfrage in unter 15 Minuten, 7 Tage die Woche. Er fasst selber nach, und zwar mit Bezug auf dein letztes Telefonat, nicht mit einer Vorlage. Wenn er etwas nicht weiss, schreibst du ihm einen Satz, er macht die fertige Mail daraus. Er koordiniert Besichtigungen und verschickt Unterlagen. Dazu bekommst du das komplette CRM gratis, solange ein Mitarbeiter läuft.</p>
       <div class="billing" role="group" aria-label="Zahlungsart">
         <button type="button" class="on" data-bill="m" aria-pressed="true">Monatlich</button>
-        <button type="button" data-bill="e" aria-pressed="false">Einmalig <span class="gift">2 Monate geschenkt</span></button>
+        <button type="button" data-bill="e" aria-pressed="false">Im Voraus <span class="gift">−30&nbsp;%</span></button>
       </div>
       <ul class="price-list" style="margin-top:32px">
         <li class="free"><span class="what">Erstes Objekt<small>Ganz, bis es verkauft ist. Nicht als Test.</small></span><span class="amt">gratis</span></li>
-        <li><span class="what">KI-Mitarbeiter<small data-pm="1–20 Objekte · jederzeit kündbar" data-pe="1–20 Objekte · 3 Monate bezahlen, 2 geschenkt">1–20 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 79<small>pro Objekt / Monat</small>" data-pe="CHF 237<small>einmalig pro Objekt</small>">CHF 79<small>pro Objekt / Monat</small></span></li>
-        <li><span class="what">KI-Mitarbeiter Team<small data-pm="21–50 Objekte · jederzeit kündbar" data-pe="21–50 Objekte · 3 Monate bezahlen, 2 geschenkt">21–50 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 49<small>pro Objekt / Monat</small>" data-pe="CHF 147<small>einmalig pro Objekt</small>">CHF 49<small>pro Objekt / Monat</small></span></li>
+        <li><span class="what">KI-Mitarbeiter<small data-pm="1–20 Objekte · jederzeit kündbar" data-pe="1–20 Objekte · 30&nbsp;% günstiger, Rest zurück">1–20 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 79<small>pro Objekt / Monat</small>" data-pe="CHF 55.30<small>pro Objekt / Monat, im Voraus</small>">CHF 79<small>pro Objekt / Monat</small></span></li>
+        <li><span class="what">KI-Mitarbeiter Team<small data-pm="21–50 Objekte · jederzeit kündbar" data-pe="21–50 Objekte · 30&nbsp;% günstiger, Rest zurück">21–50 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 49<small>pro Objekt / Monat</small>" data-pe="CHF 34.30<small>pro Objekt / Monat, im Voraus</small>">CHF 49<small>pro Objekt / Monat</small></span></li>
         <li><span class="what">KI-Mitarbeiter Enterprise<small>Ab 51 Objekten · <a href="buero.html">Enterprise ansehen</a></small></span><span class="amt" style="font-size:1.1rem">auf Anfrage</span></li>
       </ul>
+      <p class="bill-note" hidden><b>So funktioniert die Vorauszahlung:</b> Du bezahlst pro Objekt einmalig im Voraus und erhältst 30&nbsp;% Rabatt. Abgerechnet werden nur die Monate, in denen das Objekt aktiv war. Ist dein Objekt nach 3 Monaten verkauft, zahlst du 3 Monate zum reduzierten Preis. Den Rest erstatten wir dir zurück oder schreiben ihn dir als Guthaben für ein weiteres Objekt gut.</p>
       <p class="choice muted">Je mehr Objekte du hast, desto weniger zahlst du pro Objekt.</p>
     </div>
     <div class="seal">
@@ -170,12 +171,13 @@
   });
 </script>
 <script>
-  // Schalter monatlich / einmalig (3 Monatsbeiträge im Voraus = 2 Monate geschenkt)
+  // Schalter monatlich / im Voraus (30 % Rabatt, abgerechnet nach aktiven Monaten, Rest zurück oder Guthaben)
   document.querySelectorAll('.billing button').forEach(function (b) {
     b.addEventListener('click', function () {
       var k = b.getAttribute('data-bill');
       document.querySelectorAll('.billing button').forEach(function (x) { var on = x.getAttribute('data-bill') === k; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
       document.querySelectorAll('[data-pm]').forEach(function (el) { el.innerHTML = el.getAttribute(k === 'e' ? 'data-pe' : 'data-pm'); });
+      document.querySelectorAll('.bill-note').forEach(function (n) { n.hidden = k !== 'e'; });
     });
   });
 </script>
