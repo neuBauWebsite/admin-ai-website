@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261017c">
+<link rel="stylesheet" href="assets/site.css?v=20261017d">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -95,10 +95,10 @@
         <button type="button" data-bill="e" aria-pressed="false">Einmalig pro Objekt</button>
       </div>
       <ul class="price-list" style="margin-top:32px">
-        <li class="free"><span class="what">Erstes Objekt<small>Ganz, bis es verkauft ist. Nicht als Test.</small></span><span class="amt">gratis</span></li>
-        <li><span class="what">KI-Mitarbeiter<small data-pm="1–20 Objekte · jederzeit kündbar" data-pe="1–20 Objekte · gilt bis zum Abschluss">1–20 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 79<small>pro Objekt / Monat</small>" data-pe="CHF 299<small>einmalig pro Objekt</small>">CHF 79<small>pro Objekt / Monat</small></span></li>
-        <li><span class="what">KI-Mitarbeiter Team<small data-pm="21–50 Objekte · jederzeit kündbar" data-pe="21–50 Objekte · gilt bis zum Abschluss">21–50 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 49<small>pro Objekt / Monat</small>" data-pe="CHF 199<small>einmalig pro Objekt</small>">CHF 49<small>pro Objekt / Monat</small></span></li>
-        <li><span class="what">KI-Mitarbeiter Enterprise<small>Ab 51 Objekten · <a href="buero.html">Enterprise ansehen</a></small></span><span class="amt" style="font-size:1.1rem">auf Anfrage</span></li>
+        <li class="free"><span class="what">Erstes Objekt<small>Ganz, bis es verkauft ist. Nicht als Test.</small></span><span class="amt">gratis</span><a class="pick" href="https://app.admin-ai.ch/registrieren?utm_source=direct&amp;utm_campaign=produktseite">Gratis starten</a></li>
+        <li><span class="what">KI-Mitarbeiter<small data-pm="1–20 Objekte · jederzeit kündbar" data-pe="1–20 Objekte · gilt bis zum Abschluss">1–20 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 79<small>pro Objekt / Monat</small>" data-pe="CHF 299<small>einmalig pro Objekt</small>">CHF 79<small>pro Objekt / Monat</small></span><a class="pick" data-plan href="https://app.admin-ai.ch/registrieren?plan=ki-mitarbeiter&amp;zahlung=monatlich&amp;utm_source=direct&amp;utm_campaign=produktseite">Auswählen</a></li>
+        <li><span class="what">KI-Mitarbeiter Team<small data-pm="21–50 Objekte · jederzeit kündbar" data-pe="21–50 Objekte · gilt bis zum Abschluss">21–50 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 49<small>pro Objekt / Monat</small>" data-pe="CHF 199<small>einmalig pro Objekt</small>">CHF 49<small>pro Objekt / Monat</small></span><a class="pick" data-plan href="https://app.admin-ai.ch/registrieren?plan=team&amp;zahlung=monatlich&amp;utm_source=direct&amp;utm_campaign=produktseite">Auswählen</a></li>
+        <li><span class="what">KI-Mitarbeiter Enterprise<small>Ab 51 Objekten · <a href="buero.html">Enterprise ansehen</a></small></span><span class="amt" style="font-size:1.1rem">auf Anfrage</span><a class="pick pick-alt" href="buero.html#gespraech">Termin vereinbaren</a></li>
       </ul>
       <p class="bill-note" hidden><b>So funktioniert die Einmalzahlung:</b> Du bezahlst pro Objekt einmal und bist damit vom Live-Schalten bis zur Eigentumsübertragung abgedeckt. Springt ein Käufer nach der Reservation ab und dein Objekt muss neu ausgeschrieben werden, entstehen dir keine zusätzlichen Kosten.</p>
     </div>
@@ -156,13 +156,14 @@
   });
 </script>
 <script>
-  // Schalter monatlich / einmalig pro Objekt (30 % Rabatt, abgerechnet nach aktiven Monaten, Rest als Guthaben)
+  // Schalter monatlich / einmalig pro Objekt (Einmalzahlung gilt bis zur Eigentumsübertragung)
   document.querySelectorAll('.billing button').forEach(function (b) {
     b.addEventListener('click', function () {
       var k = b.getAttribute('data-bill');
       document.querySelectorAll('.billing button').forEach(function (x) { var on = x.getAttribute('data-bill') === k; x.classList.toggle('on', on); x.setAttribute('aria-pressed', on); });
       document.querySelectorAll('[data-pm]').forEach(function (el) { el.innerHTML = el.getAttribute(k === 'e' ? 'data-pe' : 'data-pm'); });
       document.querySelectorAll('.bill-note').forEach(function (n) { n.hidden = k !== 'e'; });
+      document.querySelectorAll('a[data-plan]').forEach(function (a) { a.href = a.href.replace(/zahlung=[a-z]+/, 'zahlung=' + (k === 'e' ? 'einmalig' : 'monatlich')); });
     });
   });
 </script>
