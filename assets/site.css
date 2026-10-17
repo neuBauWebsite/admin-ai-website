@@ -207,7 +207,7 @@ section { padding-block: clamp(64px, 9vw, 112px); }
 }
 
 /* Preise */
-.prices { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+.prices { display: grid; grid-template-columns: minmax(0, 680px); gap: clamp(32px, 5vw, 72px); align-items: start; justify-content: center; }
 .price-list { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
 .price-list li { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
 .price-list .what { font-weight: 600; }
