@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261017a">
+<link rel="stylesheet" href="assets/site.css?v=20261017b">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -70,11 +70,11 @@
     </div>
     <div class="billing" role="group" aria-label="Zahlungsart">
         <button type="button" class="on" data-bill="m" aria-pressed="true">Monatlich</button>
-        <button type="button" data-bill="e" aria-pressed="false">Jährlich <span class="gift">−30&nbsp;%</span></button>
+        <button type="button" data-bill="e" aria-pressed="false">Einmalig pro Objekt</button>
       </div>
     <div class="tiers">
       <article class="tier main">
-        <div class="tier-top"><span class="tier-range">1–20 Objekte</span><span class="tier-price" data-pm="<b>CHF 79</b><small>pro Objekt / Monat</small>" data-pe="<b>CHF 663.60</b><small>pro Objekt / Jahr</small>"><b>CHF 79</b><small>pro Objekt / Monat</small></span></div>
+        <div class="tier-top"><span class="tier-range">1–20 Objekte</span><span class="tier-price" data-pm="<b>CHF 79</b><small>pro Objekt / Monat</small>" data-pe="<b>CHF 316</b><small>einmalig pro Objekt</small>"><b>CHF 79</b><small>pro Objekt / Monat</small></span></div>
         <h3>KI-Mitarbeiter</h3>
         <p class="tier-aud">Für Einzelmakler und kleinere Maklerbüros.</p>
         <div class="tier-body"><p>Jedes deiner Objekte erhält einen eigenen KI-Mitarbeiter. Er beantwortet Anfragen, fasst bei Interessenten persönlich nach und koordiniert Besichtigungen. So bleibt dir mehr Zeit für das, was wirklich zählt: neue Mandate gewinnen und Immobilien verkaufen.</p></div>
@@ -84,7 +84,7 @@
         </div>
       </article>
       <article class="tier">
-        <div class="tier-top"><span class="tier-range">21–50 Objekte</span><span class="tier-price" data-pm="<b>CHF 49</b><small>pro Objekt / Monat</small>" data-pe="<b>CHF 411.60</b><small>pro Objekt / Jahr</small>"><b>CHF 49</b><small>pro Objekt / Monat</small></span></div>
+        <div class="tier-top"><span class="tier-range">21–50 Objekte</span><span class="tier-price" data-pm="<b>CHF 49</b><small>pro Objekt / Monat</small>" data-pe="<b>CHF 196</b><small>einmalig pro Objekt</small>"><b>CHF 49</b><small>pro Objekt / Monat</small></span></div>
         <h3>KI-Mitarbeiter Team</h3>
         <p class="tier-aud">Für Maklerteams mit grösseren Portfolios.</p>
         <div class="tier-body"><p>Viele Objekte, zahlreiche Anfragen und ein Team, das den Überblick behalten muss? Deine KI-Mitarbeiter übernehmen die Interessentenbetreuung und koordinieren Besichtigungen. Dein Team bleibt informiert und kann sich auf den Verkauf konzentrieren.</p><p>Je mehr Objekte du betreust, desto günstiger wird dein KI-Mitarbeiter.</p></div>
@@ -104,7 +104,7 @@
         </div>
       </article>
     </div>
-    <p class="bill-note" hidden><b>So funktioniert die Vorauszahlung:</b> Du bezahlst pro Objekt einmalig im Voraus und profitierst von 30&nbsp;% Rabatt. Verrechnet werden ausschliesslich die Monate, in denen dein Objekt aktiv ist. Wird es beispielsweise nach 3 Monaten verkauft, bezahlst du 3 Monate zum reduzierten Tarif. Den Überschuss schreiben wir dir als Guthaben für deine weiteren Objekte gut.</p>
+    <p class="bill-note" hidden><b>So funktioniert die Einmalzahlung:</b> Du bezahlst pro Objekt einmalig den Betrag von 4 Monaten. Damit ist dein Objekt bis zum Abschluss abgedeckt, ohne weitere Monatsgebühren, egal wie lange die Vermarktung dauert.</p>
     </div>
   </div>
 </section>
@@ -303,15 +303,15 @@
       <h2 style="margin:14px 0 28px">Drei Pakete. Mehr gibt es nicht.</h2>
       <div class="billing" role="group" aria-label="Zahlungsart">
         <button type="button" class="on" data-bill="m" aria-pressed="true">Monatlich</button>
-        <button type="button" data-bill="e" aria-pressed="false">Jährlich <span class="gift">−30&nbsp;%</span></button>
+        <button type="button" data-bill="e" aria-pressed="false">Einmalig pro Objekt</button>
       </div>
       <ul class="price-list">
         <li class="free"><span class="what">Erstes Objekt<small>Ganz, bis es verkauft ist. Nicht als Test.</small></span><span class="amt">gratis</span></li>
-        <li><span class="what">KI-Mitarbeiter<small data-pm="1–20 Objekte · jederzeit kündbar" data-pe="1–20 Objekte · statt CHF 948, 30&nbsp;% günstiger">1–20 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 79<small>pro Objekt / Monat</small>" data-pe="CHF 663.60<small>pro Objekt / Jahr</small>">CHF 79<small>pro Objekt / Monat</small></span></li>
-        <li><span class="what">KI-Mitarbeiter Team<small data-pm="21–50 Objekte · jederzeit kündbar" data-pe="21–50 Objekte · statt CHF 588, 30&nbsp;% günstiger">21–50 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 49<small>pro Objekt / Monat</small>" data-pe="CHF 411.60<small>pro Objekt / Jahr</small>">CHF 49<small>pro Objekt / Monat</small></span></li>
+        <li><span class="what">KI-Mitarbeiter<small data-pm="1–20 Objekte · jederzeit kündbar" data-pe="1–20 Objekte · gilt bis zum Abschluss">1–20 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 79<small>pro Objekt / Monat</small>" data-pe="CHF 316<small>einmalig pro Objekt</small>">CHF 79<small>pro Objekt / Monat</small></span></li>
+        <li><span class="what">KI-Mitarbeiter Team<small data-pm="21–50 Objekte · jederzeit kündbar" data-pe="21–50 Objekte · gilt bis zum Abschluss">21–50 Objekte · jederzeit kündbar</small></span><span class="amt" data-pm="CHF 49<small>pro Objekt / Monat</small>" data-pe="CHF 196<small>einmalig pro Objekt</small>">CHF 49<small>pro Objekt / Monat</small></span></li>
         <li><span class="what">KI-Mitarbeiter Enterprise<small>Ab 51 Objekten · <a href="buero.html">Enterprise ansehen</a></small></span><span class="amt" style="font-size:1.1rem">auf Anfrage</span></li>
       </ul>
-      <p class="bill-note" hidden><b>So funktioniert die Vorauszahlung:</b> Du bezahlst pro Objekt einmalig im Voraus und profitierst von 30&nbsp;% Rabatt. Verrechnet werden ausschliesslich die Monate, in denen dein Objekt aktiv ist. Wird es beispielsweise nach 3 Monaten verkauft, bezahlst du 3 Monate zum reduzierten Tarif. Den Überschuss schreiben wir dir als Guthaben für deine weiteren Objekte gut.</p>
+      <p class="bill-note" hidden><b>So funktioniert die Einmalzahlung:</b> Du bezahlst pro Objekt einmalig den Betrag von 4 Monaten. Damit ist dein Objekt bis zum Abschluss abgedeckt, ohne weitere Monatsgebühren, egal wie lange die Vermarktung dauert.</p>
     </div>
     <div class="seal" id="garantie">
       <span class="badge">15:00</span>
@@ -559,7 +559,7 @@
   });
 </script>
 <script>
-  // Schalter monatlich / jährlich (30 % Rabatt, abgerechnet nach aktiven Monaten, Rest als Guthaben)
+  // Schalter monatlich / einmalig pro Objekt (30 % Rabatt, abgerechnet nach aktiven Monaten, Rest als Guthaben)
   document.querySelectorAll('.billing button').forEach(function (b) {
     b.addEventListener('click', function () {
       var k = b.getAttribute('data-bill');
