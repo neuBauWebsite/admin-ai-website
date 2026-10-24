@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261024b">
+<link rel="stylesheet" href="assets/site.css?v=20261024c">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -28,83 +28,40 @@
 </header>
 
 <main>
-<!-- Einstiegsangebot: Text aus Kristians PDF «Win your money back» (24.10.2026) -->
-<section class="prod-hero start-hero">
-  <div class="wrap">
-    <div class="head">
+<!-- Einstiegsangebot: Text aus Kristians PDF «Win your money back» (24.10.2026). Links Bedingungen, rechts Formular. -->
+<section class="start" id="konto">
+  <div class="wrap form-grid">
+    <div class="hero-copy start-copy">
       <p class="eyebrow">Einstiegsangebot · Win your money back</p>
       <h1>Dein erstes Objekt <em>geht auf uns.</em></h1>
-      <p class="lead">Von der Live-Schaltung bis zur Eigentumsübertragung. Egal, ob es 4, 6 oder 12 Monate dauert. Du zahlst ganz normal und bekommst alles zurück, wenn du zwei Dinge erledigst.</p>
-    </div>
-
-    <div class="terms" id="teilnahmebedingungen">
-      <p class="eyebrow">Teilnahmebedingungen</p>
-      <div class="terms-grid">
-        <div class="term">
-          <span class="term-n">1</span>
-          <b>2 Online-Schulungen besuchen</b>
-          <span>In den ersten 30 Tagen.</span>
-        </div>
-        <div class="term">
-          <span class="term-n">2</span>
-          <b>Ehrliches Feedback geben</b>
-          <span>Nach 3 Monaten: ein kurzes Gespräch und ein LinkedIn-Post.</span>
-        </div>
-      </div>
+      <p class="lead">Du zahlst ganz normal. Erledigst du zwei Dinge, bekommst du alles zurück.</p>
+      <ul class="start-terms" id="teilnahmebedingungen">
+        <li><b>2 Online-Schulungen</b> in den ersten 30 Tagen.</li>
+        <li><b>Ehrliches Feedback</b> nach 3 Monaten: kurzes Gespräch und ein LinkedIn-Post.</li>
+        <li><b>Gilt bis zur Eigentumsübertragung.</b> Egal, ob es 4, 6 oder 12 Monate dauert.</li>
+      </ul>
       <p class="term-done">Erledigt? Dann bekommst du <b>alles zurück, was du für dein erstes Objekt bezahlt hast.</b></p>
-    </div>
-
-    <div class="start-prices">
-      <p class="eyebrow">Preise pro Objekt und Monat</p>
-      <div class="zero">
-        <div><span>1–20 Objekte</span><b>CHF 79</b></div>
-        <div><span>21–50 Objekte</span><b>CHF 49</b></div>
-        <div><span>Ab 51 Objekten</span><b>Auf Anfrage</b></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="konto">
-  <div class="wrap form-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">Konto anlegen</p>
-      <h2>10 Minuten. Dann arbeitet dein erster Mitarbeiter.</h2>
-      <p class="muted" style="max-width:46ch">Firma, Name, E-Mail und Zahlungsart. Mehr brauchen wir nicht. Danach legst du dein erstes Objekt an und verbindest dein Postfach.</p>
-      <p class="muted" style="max-width:46ch">Mehr als 50 Objekte? Leg dein erstes Objekt trotzdem jetzt an. Den Termin für dein Enterprise-Angebot buchst du <a href="buero.html#gespraech">hier</a>.</p>
+      <p class="muted start-prices-line">Danach pro Objekt und Monat: <b>CHF 79</b> bis 20 Objekte, <b>CHF 49</b> ab 21. Ab 51 Objekten <a href="buero.html#gespraech">machen wir dir ein Angebot</a>.</p>
     </div>
     <!-- Beim Livegang: Formular an die Registrierung auf app.admin-ai.ch anbinden (Konto anlegen, Zahlungsart hinterlegen). -->
     <form id="start-form" novalidate>
+      <p class="form-title">Konto anlegen. 10 Minuten, dann arbeitet er.</p>
       <label for="s-firma">Firma<input id="s-firma" name="firma" autocomplete="organization" required></label>
-      <div class="form-row">
-        <label for="s-vorname">Vorname<input id="s-vorname" name="vorname" autocomplete="given-name" required></label>
-        <label for="s-nachname">Nachname<input id="s-nachname" name="nachname" autocomplete="family-name" required></label>
-      </div>
+      <label for="s-name">Name<input id="s-name" name="name" autocomplete="name" required></label>
       <label for="s-mail">E-Mail<input id="s-mail" name="email" type="email" autocomplete="email" required></label>
       <label for="s-tel">Telefon<input id="s-tel" name="telefon" type="tel" autocomplete="tel"></label>
-      <label for="s-objekte">Objekte gerade online
-        <select id="s-objekte" name="objekte" required>
-          <option value="1-20">1–20 Objekte · KI-Mitarbeiter</option>
-          <option value="21-50">21–50 Objekte · KI-Mitarbeiter Team</option>
-          <option value="51+">Ab 51 Objekten · KI-Mitarbeiter Enterprise</option>
-        </select>
-      </label>
       <fieldset class="choice-set">
         <legend>Zahlungsart</legend>
-        <label class="choice"><input type="radio" name="zahlung" value="rechnung" checked><span>Rechnung</span></label>
-        <label class="choice"><input type="radio" name="zahlung" value="kreditkarte"><span>Kreditkarte</span></label>
-        <label class="choice"><input type="radio" name="zahlung" value="twint"><span>TWINT</span></label>
+        <div class="choice-row">
+          <label class="choice"><input type="radio" name="zahlung" value="rechnung" checked><span>Rechnung</span></label>
+          <label class="choice"><input type="radio" name="zahlung" value="kreditkarte"><span>Kreditkarte</span></label>
+          <label class="choice"><input type="radio" name="zahlung" value="twint"><span>TWINT</span></label>
+        </div>
       </fieldset>
-      <label class="choice agree"><input type="checkbox" name="bedingungen" required><span>Ich habe die <a href="#teilnahmebedingungen">Teilnahmebedingungen</a> gelesen und bin einverstanden.</span></label>
+      <label class="choice agree"><input type="checkbox" name="bedingungen" required><span>Ich bin mit den <a href="#teilnahmebedingungen">Teilnahmebedingungen</a> einverstanden.</span></label>
       <button class="btn" type="submit">Konto anlegen</button>
       <p class="form-msg" id="form-msg" hidden>Vorschau: Das Formular wird beim Livegang an app.admin-ai.ch angebunden.</p>
     </form>
-  </div>
-</section>
-
-<section class="final">
-  <div class="wrap">
-    <h2 class="final-claim"><span>Die KI wird Makler nicht überrennen.</span> <span>Makler mit KI werden es tun.</span></h2>
   </div>
 </section>
 </main>
