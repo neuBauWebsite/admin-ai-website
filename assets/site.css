@@ -481,7 +481,7 @@ h1, h2 { font-weight: 500; }
 .products.products-3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 980px) { .products.products-3 { grid-template-columns: 1fr; } }
 /* Paketkacheln: kompakt, gleiche Reihenfolge, gleiche Höhe */
-.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+.tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
 .tier { display: flex; flex-direction: column; gap: 10px; padding: 24px; border: 1px solid var(--line); border-radius: 20px; background: var(--bg); min-width: 0; }
 .tier.main { border: 2px solid var(--accent); }
 .tier-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; padding-bottom: 14px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
@@ -503,7 +503,8 @@ h1, h2 { font-weight: 500; }
 .tier-note { margin-top: 16px; display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: baseline; justify-content: center; text-align: center; padding: 16px 20px; border-radius: 16px; background: var(--accent-soft); }
 .tier-note b { font-family: var(--font-display); font-weight: 600; }
 .tier-note span { color: var(--muted); font-size: .95rem; }
-@media (max-width: 980px) { .tiers { grid-template-columns: 1fr; max-width: 560px; } .tier-note { justify-content: start; text-align: left; } }
+@media (max-width: 1100px) { .tiers { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .tiers { grid-template-columns: 1fr; max-width: 560px; } .tier-note { justify-content: start; text-align: left; } }
 /* Schalter monatlich / einmalig */
 .billing { display: inline-flex; gap: 4px; padding: 4px; margin-bottom: 20px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
 .billing button { border: 0; background: transparent; color: var(--muted); font: 600 .9rem/1 var(--font-body); padding: 10px 16px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
@@ -577,3 +578,6 @@ h1, h2 { font-weight: 500; }
 .tier-top { justify-content: flex-start; }
 .tier-price { justify-items: start; }
 #produkte .sec-head .lead { max-width: 60ch; }
+/* Vier Kacheln: etwas kompakter */
+.tier { padding: 20px; }
+.tier-body a { color: var(--accent); }

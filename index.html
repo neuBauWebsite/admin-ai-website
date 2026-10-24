@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261024i">
+<link rel="stylesheet" href="assets/site.css?v=20261024j">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -69,7 +69,17 @@
       <p class="lead">Jedes Objekt bekommt seinen eigenen KI-Mitarbeiter. Er antwortet, fragt nach und macht Termine ab. Der Preis hängt nur davon ab, wie viele Objekte du im Monat online hast.</p>
     </div>
     <div class="tiers">
+      <!-- Probiererli: Gratis-Paket (Einstiegsangebot). Textversion 1 von 5, Kristian wählt. -->
       <article class="tier main">
+        <div class="tier-top"><span class="tier-price"><b>CHF 0</b><small>1 Objekt bis zum Abschluss</small></span></div>
+        <h3>Probiererli</h3>
+        <div class="tier-body"><p>Dein erstes Objekt geht auf uns. Du erfüllst <a href="start.html#teilnahmebedingungen">zwei kleine Bedingungen</a>, wir zahlen dir alles zurück.</p></div>
+        <div class="tier-foot">
+          <a class="tier-video" href="produkt.html#video"><i></i>Video: Probiererli</a>
+          <a class="tier-cta" href="produkt.html">Erstes Objekt gratis starten <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="tier">
         <div class="tier-top"><span class="tier-price"><b>CHF 79</b><small>pro Objekt / Monat</small></span></div>
         <h3>Klein aber fein</h3>
         <div class="tier-body"><p>Passend für Einzelmakler oder kleine Teams mit 1 bis 20 Objekten im Monat.</p></div>
@@ -101,41 +111,6 @@
   </div>
 </section>
 
-
-<!-- Teste uns: echtes Inserat, Frage kopieren, Antwort in 15 Minuten -->
-<section id="testen" class="test-sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Teste uns jetzt</p>
-      <h2>Glaub uns kein Wort. Stell ihn auf die Probe.</h2>
-      <p class="lead">Kopiere eine der zwei Fragen oder stell deine eigene, so schwer du willst. Schick sie über das Kontaktformular dieses echten Inserats.</p>
-    </div>
-    <div class="testgrid">
-      <a class="inserat" href="https://www.homegate.ch/kaufen/4003521392" target="_blank" rel="noopener">
-        <span class="inserat-img"><img src="https://media2.homegate.ch/f_auto/t_web_dp_large/listings/v2/h530138/4003521392/image/7fa7b7fecec83a4345703f8291b0afce.jpg" alt="5.5-Zimmer-Wohnung am Feldhof 6 in Zug" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span>
-        <span class="inserat-body">
-          <span class="inserat-src">Homegate · Inserat 4003521392</span>
-          <b>5.5-Zimmer-Wohnung in Zug</b>
-          <span class="muted">Feldhof 6, 6300 Zug · 137 m² · 2. OG · Wintergarten</span>
-          <span class="go">Inserat öffnen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </span>
-      </a>
-      <div class="questions">
-        <div class="q">
-          <span class="q-label">Frage zum Grundbuchauszug</span>
-          <p>Guten Tag, ich interessiere mich für die 5.5-Zimmer-Wohnung am Feldhof 6 in Zug. Sind im Grundbuchauszug Dienstbarkeiten oder Grundpfandrechte eingetragen, die mich als Käufer betreffen würden, zum Beispiel ein Wegrecht oder ein Näherbaurecht? Und wie hoch ist die Wertquote der Wohnung?</p>
-          <button class="q-copy" type="button">Frage kopieren</button>
-        </div>
-        <div class="q">
-          <span class="q-label">Frage zum STWEG-Protokoll</span>
-          <p>Guten Tag, ich interessiere mich für die 5.5-Zimmer-Wohnung am Feldhof 6 in Zug. Wurden in den letzten Protokollen der Stockwerkeigentümerversammlung grössere Sanierungen oder Sonderumlagen beschlossen? Und wie hoch ist der aktuelle Stand des Erneuerungsfonds?</p>
-          <button class="q-copy" type="button">Frage kopieren</button>
-        </div>
-        <p class="q-note"><strong>In 15 Minuten hast du die Antwort</strong> im Postfach. Zwischen 7 und 21 Uhr, auch am Wochenende.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- 3 · Warum alles andere nicht geht -->
 <section class="band">
@@ -347,6 +322,41 @@
       <div><b>Kein Umzug</b><span>Dein System bleibt, wie es ist.</span></div>
       <div><b>Kein Export</b><span>Keine Daten kopieren, keine Listen übertragen.</span></div>
       <div><b>Keine Schulung</b><span>Live in 10 Minuten: Konto, Objekt, Postfach.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Teste uns: echtes Inserat, Frage kopieren, Antwort in 15 Minuten -->
+<section id="testen" class="test-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Teste uns jetzt</p>
+      <h2>Glaub uns kein Wort. Stell ihn auf die Probe.</h2>
+      <p class="lead">Kopiere eine der zwei Fragen oder stell deine eigene, so schwer du willst. Schick sie über das Kontaktformular dieses echten Inserats.</p>
+    </div>
+    <div class="testgrid">
+      <a class="inserat" href="https://www.homegate.ch/kaufen/4003521392" target="_blank" rel="noopener">
+        <span class="inserat-img"><img src="https://media2.homegate.ch/f_auto/t_web_dp_large/listings/v2/h530138/4003521392/image/7fa7b7fecec83a4345703f8291b0afce.jpg" alt="5.5-Zimmer-Wohnung am Feldhof 6 in Zug" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span>
+        <span class="inserat-body">
+          <span class="inserat-src">Homegate · Inserat 4003521392</span>
+          <b>5.5-Zimmer-Wohnung in Zug</b>
+          <span class="muted">Feldhof 6, 6300 Zug · 137 m² · 2. OG · Wintergarten</span>
+          <span class="go">Inserat öffnen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </span>
+      </a>
+      <div class="questions">
+        <div class="q">
+          <span class="q-label">Frage zum Grundbuchauszug</span>
+          <p>Guten Tag, ich interessiere mich für die 5.5-Zimmer-Wohnung am Feldhof 6 in Zug. Sind im Grundbuchauszug Dienstbarkeiten oder Grundpfandrechte eingetragen, die mich als Käufer betreffen würden, zum Beispiel ein Wegrecht oder ein Näherbaurecht? Und wie hoch ist die Wertquote der Wohnung?</p>
+          <button class="q-copy" type="button">Frage kopieren</button>
+        </div>
+        <div class="q">
+          <span class="q-label">Frage zum STWEG-Protokoll</span>
+          <p>Guten Tag, ich interessiere mich für die 5.5-Zimmer-Wohnung am Feldhof 6 in Zug. Wurden in den letzten Protokollen der Stockwerkeigentümerversammlung grössere Sanierungen oder Sonderumlagen beschlossen? Und wie hoch ist der aktuelle Stand des Erneuerungsfonds?</p>
+          <button class="q-copy" type="button">Frage kopieren</button>
+        </div>
+        <p class="q-note"><strong>In 15 Minuten hast du die Antwort</strong> im Postfach. Zwischen 7 und 21 Uhr, auch am Wochenende.</p>
+      </div>
     </div>
   </div>
 </section>
