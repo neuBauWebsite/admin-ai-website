@@ -573,3 +573,7 @@ h1, h2 { font-weight: 500; }
 .cal-times button.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .cal .btn:disabled { opacity: .45; cursor: default; transform: none; box-shadow: none; }
 .cal-note { margin: 0; font-size: .85rem; }
+/* Kacheln ohne Objektzahl oben: Preis links */
+.tier-top { justify-content: flex-start; }
+.tier-price { justify-items: start; }
+#produkte .sec-head .lead { max-width: 60ch; }
