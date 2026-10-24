@@ -596,9 +596,9 @@ h1, h2 { font-weight: 500; }
 .obj-range::-moz-range-track { background: transparent; }
 .obj-scale { position: relative; height: 1.2em; font: 600 .78rem/1.2 var(--font-mono); color: var(--muted); }
 .obj-scale span { position: absolute; top: 0; }
-.obj-scale span:nth-child(1) { left: 0; }
-.obj-scale span:nth-child(2) { left: 38%; transform: translateX(-50%); }
-.obj-scale span:nth-child(3) { right: 0; }
+.obj-scale span { left: var(--x); transform: translateX(-50%); }
+.obj-scale span:first-child { left: 0; transform: none; }
+.obj-scale span:last-child { left: auto; right: 0; transform: none; }
 .tier.paket { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; padding: 24px; }
 .paket-main { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .paket-main .tier-foot { margin-top: 14px; }

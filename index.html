@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261024k">
+<link rel="stylesheet" href="assets/site.css?v=20261024l">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -68,30 +68,30 @@
       <h2>Wie viele Objekte hast du gerade online?</h2>
       <p class="lead">Jedes Objekt bekommt seinen eigenen KI-Mitarbeiter. Er antwortet, fragt nach und macht Termine ab. Der Preis hängt nur davon ab, wie viele Objekte du im Monat online hast.</p>
     </div>
-    <!-- Regler (Kristian, 24.10.2026): Start bei 8, 1 bis 50+. Paket und Preis darunter folgen dem Regler: 1–20 Klein aber fein, 21–50 Goldene Mitte, 50+ Die Extrawurst. Erstes Objekt immer gratis. -->
+    <!-- Regler (Kristian, 24.10.2026): Start bei 8, 1 bis 40+. Stufen: 1–3 Probiererli (gratis, für immer), 4–10 Klein aber fein CHF 759, 11–20 Goldene Mitte CHF 1'479, 21–40 Volles Haus CHF 2'499, 41+ Die Extrawurst (Angebot). Preise pro Monat fürs ganze Paket. -->
     <div class="objekte">
       <div class="obj-box">
         <div class="obj-head">
           <label class="obj-label" for="obj-range">Zieh den Regler auf deine Objekte.</label>
           <output class="obj-val" id="obj-val" for="obj-range">8</output>
         </div>
-        <input class="obj-range" type="range" id="obj-range" min="1" max="51" step="1" value="8" aria-label="Anzahl Objekte im Monat">
-        <div class="obj-scale" aria-hidden="true"><span>1</span><span>20</span><span>50+</span></div>
+        <input class="obj-range" type="range" id="obj-range" min="1" max="41" step="1" value="8" aria-label="Anzahl Objekte im Monat">
+        <div class="obj-scale" aria-hidden="true"><span>1</span><span style="--x:5%">3</span><span style="--x:22.5%">10</span><span style="--x:47.5%">20</span><span>40+</span></div>
       </div>
       <article class="tier main paket" id="paket" aria-live="polite">
         <div class="paket-main">
-          <div class="tier-top"><span class="tier-price"><b id="paket-preis">CHF 79</b><small id="paket-einheit">pro Objekt / Monat</small></span></div>
+          <div class="tier-top"><span class="tier-price"><b id="paket-preis">CHF 759</b><small id="paket-einheit">pro Monat</small></span></div>
           <h3 id="paket-name">Klein aber fein</h3>
-          <div class="tier-body"><p id="paket-text">Passend für Einzelmakler oder kleine Teams mit 1 bis 20 Objekten im Monat.</p></div>
+          <div class="tier-body"><p id="paket-text">Passend für Einzelmakler oder kleine Teams mit 4 bis 10 Objekten im Monat.</p></div>
           <div class="tier-foot">
             <a class="tier-video" id="paket-video" href="produkt.html#video"><i></i><span id="paket-video-label">Video: Klein aber fein</span></a>
-            <a class="tier-cta" id="paket-cta" href="produkt.html"><span id="paket-cta-label">Erstes Objekt gratis starten</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="tier-cta" id="paket-cta" href="produkt.html"><span id="paket-cta-label">Gratis starten</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
         <ul class="paket-calc">
-          <li><span>1 Objekt gratis, <a href="start.html#teilnahmebedingungen">zwei Bedingungen</a></span><b>CHF 0</b></li>
-          <li id="calc-rest"><span id="calc-rest-label">7 Objekte × CHF 79</span><b id="calc-rest-sum">CHF 553</b></li>
-          <li class="sum"><span>Pro Monat<small>Jeden Monat kündbar. Keine Grundgebühr.</small></span><b id="calc-total">CHF 553</b></li>
+          <li><span>3 Objekte gratis, für immer</span><b>CHF 0</b></li>
+          <li id="calc-rest"><span id="calc-rest-label">Klein aber fein, 4 bis 10 Objekte</span><b id="calc-rest-sum">CHF 759</b></li>
+          <li class="sum"><span>Pro Monat<small>Jeden Monat kündbar. Keine versteckten Kosten.</small></span><b id="calc-total">CHF 759</b></li>
         </ul>
       </article>
     </div>
@@ -373,7 +373,7 @@
       <div class="person">
         <img src="assets/team-kristian.jpg" alt="Kristian Dobro" loading="lazy" width="720" height="900">
         <div><span class="role">Sales</span><h3>Kristian Dobro</h3></div>
-        <p>Ruf ihn an, wenn du mehr als 50 Objekte hast oder wissen willst, wie es bei deinem nächsten Objekt läuft.</p>
+        <p>Ruf ihn an, wenn du mehr als 40 Objekte hast oder wissen willst, wie es bei deinem nächsten Objekt läuft.</p>
       </div>
     </div>
   </div>
@@ -388,8 +388,8 @@
       <details><summary>Ist Admin-AI ein CRM?</summary><p>Nein. Du bekommst einen Mitarbeiter, der dir Arbeit abnimmt. Ein ganzes CRM gibt es gratis dazu, solange dein Mitarbeiter läuft. Dein altes CRM kannst du behalten.</p></details>
       <details><summary>Merken meine Interessenten, dass eine KI antwortet?</summary><p>Nein. Admin-AI schreibt keine Standardtexte. Er kennt dein Objekt, weiss, was bisher besprochen wurde, und antwortet jedem Interessenten persönlich. Er arbeitet täglich von 07:10 bis 21:00 Uhr, damit es natürlich wirkt.</p></details>
       <details><summary>Muss ich mein bestehendes System wechseln?</summary><p>Nein. Du verbindest nur dein Verkaufs-Postfach. Dein CRM, deine Inserate und deine Abläufe bleiben, wie sie sind.</p></details>
-      <details><summary>Was kostet mich Admin-AI?</summary><p>Dein erstes Objekt kostet nichts. Danach zahlst du pro Objekt: CHF 79 im Monat bis 20 Objekte, CHF 49 im Monat ab 21 Objekten. Ab 51 Objekten machen wir dir ein eigenes Angebot. Keine Grundgebühr. Keine versteckten Kosten. Du kannst jeden Monat aufhören.</p></details>
-      <details><summary>Ich betreue mehr als 200 Objekte. Gibt es einen Mengenrabatt?</summary><p>Ja. Ab 51 Objekten machen wir dir ein eigenes Angebot. Einen festen Preis gibt es dafür nicht. Wir schauen uns dein Portfolio zusammen an, und du bekommst ein Angebot, das dazu passt. <a href="buero.html#gespraech">Termin vereinbaren</a></p></details>
+      <details><summary>Was kostet mich Admin-AI?</summary><p>Deine ersten 3 Objekte kosten nichts, für immer. Danach zahlst du ein festes Paket pro Monat: CHF 759 bis 10 Objekte, CHF 1'479 bis 20 Objekte, CHF 2'499 bis 40 Objekte. Ab 41 Objekten machen wir dir ein eigenes Angebot. Keine versteckten Kosten. Du kannst jeden Monat aufhören.</p></details>
+      <details><summary>Ich betreue mehr als 200 Objekte. Gibt es einen Mengenrabatt?</summary><p>Ja. Ab 41 Objekten machen wir dir ein eigenes Angebot. Einen festen Preis gibt es dafür nicht. Wir schauen uns dein Portfolio zusammen an, und du bekommst ein Angebot, das dazu passt. <a href="buero.html#gespraech">Termin vereinbaren</a></p></details>
       <details><summary>Wo werden meine Daten gespeichert?</summary><p>Deine Daten gehören dir. Wir nutzen sie nicht, um KI zu trainieren. Admin-AI sieht nur das verbundene Postfach, und du kannst die Verbindung jederzeit trennen. Alle Daten liegen in der Schweiz, auf AWS-Servern in Zürich.</p></details>
     </div>
   </div>
@@ -413,7 +413,7 @@
   <div class="wrap">
     <span>© 2026 neuBau.Website KLG · Daten in der Schweiz</span>
     <nav aria-label="Fusszeile">
-      <a href="produkt.html">Klein aber fein &amp; Goldene Mitte</a>
+      <a href="produkt.html">Pakete bis 40 Objekte</a>
       <a href="buero.html">Die Extrawurst</a>
       <a href="#impressum">Impressum</a>
       <a href="#datenschutz">Datenschutz</a>
@@ -495,41 +495,47 @@
   });
 </script>
 <script>
-  // Objekt-Regler: Paket, Preis und Monatsbetrag folgen der Reglerposition
+  // Objekt-Regler: Paket, Preis und Monatsbetrag folgen der Reglerposition (Stufen von Kristian, 24.10.2026)
   (function () {
     var r = document.getElementById('obj-range'); if (!r) return;
     function $(id) { return document.getElementById(id); }
     function chf(n) { return 'CHF ' + n.toLocaleString('de-CH'); }
-    var P = {
-      klein: { name: 'Klein aber fein', rate: 79, text: 'Passend für Einzelmakler oder kleine Teams mit 1 bis 20 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Erstes Objekt gratis starten' },
-      mitte: { name: 'Goldene Mitte', rate: 49, text: 'Passend für wachsende Büros mit 21 bis 50 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Erstes Objekt gratis starten' },
-      extra: { name: 'Die Extrawurst', rate: 0, text: 'Ab mehr als 50 Objekten im Monat schauen wir uns dein Portfolio genauer an und erstellen gemeinsam ein individuelles Paket.', video: 'buero.html#video', cta: 'buero.html', ctaLabel: 'Gratis starten & Video\u2011Call' }
-    };
+    var T = [
+      { max: 3,  name: 'Probiererli',     price: 0,    text: 'Bis 3 Objekte im Monat. Das kostet dich nichts, für immer.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
+      { max: 10, name: 'Klein aber fein', price: 759,  text: 'Passend für Einzelmakler oder kleine Teams mit 4 bis 10 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
+      { max: 20, name: 'Goldene Mitte',   price: 1479, text: 'Passend für wachsende Büros mit 11 bis 20 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
+      { max: 40, name: 'Volles Haus',     price: 2499, text: 'Passend für grosse Büros mit 21 bis 40 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
+      { max: 99, name: 'Die Extrawurst',  price: -1,   text: 'Ab mehr als 40 Objekten im Monat schauen wir uns dein Portfolio genauer an und erstellen gemeinsam ein individuelles Paket.', video: 'buero.html#video', cta: 'buero.html', ctaLabel: 'Gratis starten & Video\u2011Call' }
+    ];
     function update() {
-      var n = +r.value, plus = n > 50, p = plus ? P.extra : (n > 20 ? P.mitte : P.klein);
-      r.style.setProperty('--p', ((n - 1) / 50 * 100) + '%');
-      $('obj-val').textContent = plus ? '50+' : n;
+      var n = +r.value, plus = n > 40, i = 0;
+      while (n > T[i].max) i++;
+      var p = T[i], prev = i ? T[i - 1].max + 1 : 1;
+      r.style.setProperty('--p', ((n - 1) / 40 * 100) + '%');
+      $('obj-val').textContent = plus ? '40+' : n;
       $('paket-name').textContent = p.name;
       $('paket-text').textContent = p.text;
       $('paket-video-label').textContent = 'Video: ' + p.name;
       $('paket-video').href = p.video;
       $('paket-cta').href = p.cta;
       $('paket-cta-label').textContent = p.ctaLabel;
+      $('calc-rest').hidden = p.price === 0;
       if (plus) {
         $('paket-preis').textContent = 'Individuell';
         $('paket-einheit').textContent = 'Wir machen dir ein Angebot';
-        $('calc-rest').hidden = false;
-        $('calc-rest-label').textContent = 'Ab 51 Objekten';
+        $('calc-rest-label').textContent = 'Ab 41 Objekten';
         $('calc-rest-sum').textContent = 'auf Anfrage';
         $('calc-total').textContent = 'auf Anfrage';
+      } else if (p.price === 0) {
+        $('paket-preis').textContent = 'CHF 0';
+        $('paket-einheit').textContent = 'für immer';
+        $('calc-total').textContent = 'CHF 0';
       } else {
-        var paid = n - 1, total = paid * p.rate;
-        $('paket-preis').textContent = chf(p.rate);
-        $('paket-einheit').textContent = 'pro Objekt / Monat';
-        $('calc-rest').hidden = paid === 0;
-        $('calc-rest-label').textContent = paid + (paid === 1 ? ' Objekt' : ' Objekte') + ' \u00d7 ' + chf(p.rate);
-        $('calc-rest-sum').textContent = chf(total);
-        $('calc-total').textContent = chf(total);
+        $('paket-preis').textContent = chf(p.price);
+        $('paket-einheit').textContent = 'pro Monat';
+        $('calc-rest-label').textContent = p.name + ', ' + prev + ' bis ' + p.max + ' Objekte';
+        $('calc-rest-sum').textContent = chf(p.price);
+        $('calc-total').textContent = chf(p.price);
       }
     }
     r.addEventListener('input', update);
