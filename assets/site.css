@@ -498,7 +498,7 @@ h1, h2 { font-weight: 500; }
 .tier-video i { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
 .tier-video i::after { content: ""; border-left: 7px solid var(--accent-ink); border-top: 5px solid transparent; border-bottom: 5px solid transparent; margin-left: 2px; }
 .tier-video:hover { outline: 1.5px solid var(--accent); }
-.tier-cta { display: inline-flex; align-items: center; gap: 8px; font-weight: 650; color: var(--accent); text-decoration: none; font-size: .95rem; }
+.tier-cta { white-space: nowrap; display: inline-flex; align-items: center; gap: 8px; font-weight: 650; color: var(--accent); text-decoration: none; font-size: .95rem; }
 .tier-cta svg { width: 18px; height: 18px; flex: none; }
 .tier-note { margin-top: 16px; display: flex; gap: 8px 16px; flex-wrap: wrap; align-items: baseline; justify-content: center; text-align: center; padding: 16px 20px; border-radius: 16px; background: var(--accent-soft); }
 .tier-note b { font-family: var(--font-display); font-weight: 600; }
