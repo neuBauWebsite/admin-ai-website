@@ -519,3 +519,34 @@ h1, h2 { font-weight: 500; }
 .price-list .pick:hover { transform: translateY(-1px); box-shadow: 0 10px 24px -12px var(--accent); }
 .price-list .pick-alt { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
 @media (max-width: 560px) { .price-list li { grid-template-columns: 1fr auto; row-gap: 14px; } .price-list .pick { grid-column: 1 / -1; width: 100%; } }
+/* Anmeldeseite (start.html): Einstiegsangebot, Teilnahmebedingungen, Formular */
+.start-hero h1 em { font-style: normal; color: var(--accent); }
+.start-hero .lead { max-width: 60ch; }
+.terms { display: grid; gap: 16px; }
+.terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.term { position: relative; background: var(--surface); border-radius: var(--radius); padding: 26px 26px 26px 72px; display: grid; gap: 6px; align-content: start; }
+.term b { font-family: var(--font-display); font-size: 1.3rem; letter-spacing: -0.01em; }
+.term span { color: var(--muted); }
+.term span.term-n { position: absolute; left: 24px; top: 26px; width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; font: 600 .95rem/1 var(--font-mono); }
+.term-n + b { margin-top: 4px; }
+.term-done { margin: 0; padding: 18px 22px; border-radius: 14px; border: 2px solid var(--accent); background: var(--accent-soft); font-size: 1.05rem; line-height: 1.5; }
+.term-done b { color: var(--accent); }
+.start-prices { display: grid; gap: 16px; }
+.start-prices .zero b { font-size: 1.6rem; }
+.start-prices .zero div { border: 1px solid var(--line); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+select { font: inherit; font-weight: 400; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); width: 100%; }
+select:focus { outline: 2px solid var(--accent); border-color: transparent; }
+.choice-set { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
+.choice-set legend { font-weight: 600; font-size: .95rem; margin-bottom: 6px; }
+.choice { display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: .95rem; padding: 10px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); cursor: pointer; }
+.choice input { width: 18px; height: 18px; padding: 0; margin: 0; accent-color: var(--accent); flex: none; }
+.choice.agree { align-items: flex-start; border: 0; padding: 4px 0; background: transparent; font-weight: 400; }
+.choice.agree input { margin-top: 3px; }
+.choice a { color: var(--accent); }
+@media (max-width: 600px) { .terms-grid, .form-row { grid-template-columns: 1fr; } }
+/* Enterprise-Kachel: zwei Schnellwege (erstes Objekt, Video-Call) */
+.tier-acts { display: grid; gap: 8px; }
+.tier-acts a { display: flex; align-items: center; justify-content: center; padding: 9px 12px; border-radius: 10px; border: 1.5px solid var(--accent); color: var(--accent); text-decoration: none; font-weight: 600; font-size: .85rem; white-space: nowrap; }
+.tier-acts a:first-child { background: var(--accent); color: var(--accent-ink); }
+.tier-acts a:hover { filter: brightness(1.08); }
