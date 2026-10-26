@@ -588,17 +588,16 @@ h1, h2 { font-weight: 500; }
 .obj-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .obj-label { font-weight: 600; font-size: 1.05rem; }
 .obj-val { font-family: var(--font-display); font-size: 2.4rem; font-weight: 600; line-height: 1; color: var(--accent); }
-.obj-range { -webkit-appearance: none; appearance: none; width: 100%; height: 8px; margin: 18px 0 12px; padding: 0; border: 0; border-radius: 999px; cursor: pointer;
-  background: linear-gradient(90deg, var(--accent) var(--p, 14%), var(--line) var(--p, 14%)); }
+.obj-range { --thumb: 30px; -webkit-appearance: none; appearance: none; width: 100%; height: 8px; margin: 18px 0 12px; padding: 0; border: 0; border-radius: 999px; cursor: pointer;
+  /* Füllung endet in der Mitte des Knopfs: der Knopf läuft nur von thumb/2 bis 100% − thumb/2 */
+  background: linear-gradient(90deg, var(--accent) calc(var(--thumb) / 2 + var(--f, 0) * (100% - var(--thumb))), var(--line) 0); }
 .obj-range:focus-visible { outline-offset: 10px; }
-.obj-range::-webkit-slider-thumb { -webkit-appearance: none; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); border: 4px solid var(--bg); box-shadow: 0 0 0 2px var(--accent), 0 8px 18px -8px rgba(0,0,0,.5); cursor: grab; }
-.obj-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); border: 4px solid var(--bg); box-shadow: 0 0 0 2px var(--accent), 0 8px 18px -8px rgba(0,0,0,.5); cursor: grab; }
+.obj-range::-webkit-slider-thumb { -webkit-appearance: none; width: var(--thumb); height: var(--thumb); border-radius: 50%; background: var(--accent); border: 4px solid var(--bg); box-shadow: 0 0 0 2px var(--accent), 0 8px 18px -8px rgba(0,0,0,.5); cursor: grab; }
+.obj-range::-moz-range-thumb { width: calc(var(--thumb) - 8px); height: calc(var(--thumb) - 8px); border-radius: 50%; background: var(--accent); border: 4px solid var(--bg); box-shadow: 0 0 0 2px var(--accent), 0 8px 18px -8px rgba(0,0,0,.5); cursor: grab; }
 .obj-range::-moz-range-track { background: transparent; }
-.obj-scale { position: relative; height: 1.2em; font: 600 .78rem/1.2 var(--font-mono); color: var(--muted); }
-.obj-scale span { position: absolute; top: 0; }
-.obj-scale span { left: var(--x); transform: translateX(-50%); }
-.obj-scale span:first-child { left: 0; transform: none; }
-.obj-scale span:last-child { left: auto; right: 0; transform: none; }
+/* Skala: gleiche Laufstrecke wie der Knopf (Rand = halbe Knopfbreite), Zahlen mittig unter dem Knopf */
+.obj-scale { position: relative; height: 1.2em; margin: 0 15px; font: 600 .78rem/1.2 var(--font-mono); color: var(--muted); }
+.obj-scale span { position: absolute; top: 0; left: var(--x); transform: translateX(-50%); }
 .tier.paket { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; padding: 24px; }
 .paket-main { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .paket-main .tier-foot { margin-top: 14px; }

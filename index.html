@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261024l">
+<link rel="stylesheet" href="assets/site.css?v=20261026a">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -68,15 +68,15 @@
       <h2>Wie viele Objekte hast du gerade online?</h2>
       <p class="lead">Jedes Objekt bekommt seinen eigenen KI-Mitarbeiter. Er antwortet, fragt nach und macht Termine ab. Der Preis hängt nur davon ab, wie viele Objekte du im Monat online hast.</p>
     </div>
-    <!-- Regler (Kristian, 24.10.2026): Start bei 8, 1 bis 40+. Stufen: 1–3 Probiererli (gratis, für immer), 4–10 Klein aber fein CHF 759, 11–20 Goldene Mitte CHF 1'479, 21–40 Volles Haus CHF 2'499, 41+ Die Extrawurst (Angebot). Preise pro Monat fürs ganze Paket. -->
+    <!-- Regler (Kristian, 24.10.2026): Start bei 1 (seit 26.10.), 1 bis 40+. Stufen: 1–3 Probiererli (gratis, für immer), 4–10 Klein aber fein CHF 759, 11–20 Goldene Mitte CHF 1'479, 21–40 Volles Haus CHF 2'499, 41+ Die Extrawurst (Angebot). Preise pro Monat fürs ganze Paket. -->
     <div class="objekte">
       <div class="obj-box">
         <div class="obj-head">
           <label class="obj-label" for="obj-range">Zieh den Regler auf deine Objekte.</label>
           <output class="obj-val" id="obj-val" for="obj-range">8</output>
         </div>
-        <input class="obj-range" type="range" id="obj-range" min="1" max="41" step="1" value="8" aria-label="Anzahl Objekte im Monat">
-        <div class="obj-scale" aria-hidden="true"><span>1</span><span style="--x:5%">3</span><span style="--x:22.5%">10</span><span style="--x:47.5%">20</span><span>40+</span></div>
+        <input class="obj-range" type="range" id="obj-range" min="1" max="41" step="1" value="1" aria-label="Anzahl Objekte im Monat">
+        <div class="obj-scale" aria-hidden="true"><span style="--x:0%">1</span><span style="--x:5%">3</span><span style="--x:22.5%">10</span><span style="--x:47.5%">20</span><span style="--x:100%">40+</span></div>
       </div>
       <article class="tier main paket" id="paket" aria-live="polite">
         <div class="paket-main">
@@ -511,7 +511,7 @@
       var n = +r.value, plus = n > 40, i = 0;
       while (n > T[i].max) i++;
       var p = T[i], prev = i ? T[i - 1].max + 1 : 1;
-      r.style.setProperty('--p', ((n - 1) / 40 * 100) + '%');
+      r.style.setProperty('--f', (n - 1) / 40);
       $('obj-val').textContent = plus ? '40+' : n;
       $('paket-name').textContent = p.name;
       $('paket-text').textContent = p.text;
