@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261026c">
+<link rel="stylesheet" href="assets/site.css?v=20261026d">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -68,7 +68,7 @@
       <h2>Wie viele Objekte hast du gerade online?</h2>
       <p class="lead">Jedes Objekt bekommt seinen eigenen KI-Mitarbeiter. Er antwortet, fragt nach und macht Termine ab. Der Preis hängt nur davon ab, wie viele Objekte du im Monat online hast.</p>
     </div>
-    <!-- Regler (Kristian, 24.10.2026): Start bei 1 (seit 26.10.), 1 bis 40+. Stufen: 1–3 Probiererli (gratis, für immer), 4–5 Handvoll CHF 499 (seit 26.10.), 6–10 Klein aber fein CHF 759, 11–20 Goldene Mitte CHF 1'479, 21–40 Volles Haus CHF 2'499, 41+ Die Extrawurst (Angebot). Preise pro Monat fürs ganze Paket. -->
+    <!-- Regler (Kristian, 24.10.2026): Start bei 1 (seit 26.10.), 1 bis 40+. Stufen: 1–3 Probiererli (gratis, für immer), 4–5 Handvoll CHF 259 (seit 26.10.), 6–10 Klein aber fein CHF 759, 11–20 Goldene Mitte CHF 1'479, 21–40 Volles Haus CHF 2'499, 41+ Die Extrawurst (Angebot). Preise pro Monat fürs ganze Paket. -->
     <div class="objekte">
       <div class="obj-box">
         <div class="obj-head">
@@ -388,7 +388,7 @@
       <details><summary>Ist Admin-AI ein CRM?</summary><p>Nein. Du bekommst einen Mitarbeiter, der dir Arbeit abnimmt. Ein ganzes CRM gibt es gratis dazu, solange dein Mitarbeiter läuft. Dein altes CRM kannst du behalten.</p></details>
       <details><summary>Merken meine Interessenten, dass eine KI antwortet?</summary><p>Nein. Admin-AI schreibt keine Standardtexte. Er kennt dein Objekt, weiss, was bisher besprochen wurde, und antwortet jedem Interessenten persönlich. Er arbeitet täglich von 07:10 bis 21:00 Uhr, damit es natürlich wirkt.</p></details>
       <details><summary>Muss ich mein bestehendes System wechseln?</summary><p>Nein. Du verbindest nur dein Verkaufs-Postfach. Dein CRM, deine Inserate und deine Abläufe bleiben, wie sie sind.</p></details>
-      <details><summary>Was kostet mich Admin-AI?</summary><p>Deine ersten 3 Objekte kosten nichts, für immer. Danach zahlst du ein festes Paket pro Monat: CHF 499 bis 5 Objekte, CHF 759 bis 10 Objekte, CHF 1'479 bis 20 Objekte, CHF 2'499 bis 40 Objekte. Ab 41 Objekten machen wir dir ein eigenes Angebot. Keine versteckten Kosten. Du kannst jeden Monat aufhören.</p></details>
+      <details><summary>Was kostet mich Admin-AI?</summary><p>Deine ersten 3 Objekte kosten nichts, für immer. Danach zahlst du ein festes Paket pro Monat: CHF 259 bis 5 Objekte, CHF 759 bis 10 Objekte, CHF 1'479 bis 20 Objekte, CHF 2'499 bis 40 Objekte. Ab 41 Objekten machen wir dir ein eigenes Angebot. Keine versteckten Kosten. Du kannst jeden Monat aufhören.</p></details>
       <details><summary>Ich betreue mehr als 200 Objekte. Gibt es einen Mengenrabatt?</summary><p>Ja. Ab 41 Objekten machen wir dir ein eigenes Angebot. Einen festen Preis gibt es dafür nicht. Wir schauen uns dein Portfolio zusammen an, und du bekommst ein Angebot, das dazu passt. <a href="buero.html#gespraech">Termin vereinbaren</a></p></details>
       <details><summary>Wo werden meine Daten gespeichert?</summary><p>Deine Daten gehören dir. Wir nutzen sie nicht, um KI zu trainieren. Admin-AI sieht nur das verbundene Postfach, und du kannst die Verbindung jederzeit trennen. Alle Daten liegen in der Schweiz, auf AWS-Servern in Zürich.</p></details>
     </div>
@@ -502,7 +502,7 @@
     function chf(n) { return 'CHF ' + n.toLocaleString('de-CH'); }
     var T = [
       { max: 3,  name: 'Probiererli',     price: 0,    text: 'Bis 3 Objekte im Monat. Das kostet dich nichts, für immer.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
-      { max: 5,  name: 'Handvoll',        price: 499,  text: 'Passend für Einzelmakler mit 4 oder 5 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
+      { max: 5,  name: 'Handvoll',        price: 259,  text: 'Passend für Einzelmakler mit 4 oder 5 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
       { max: 10, name: 'Klein aber fein', price: 759,  text: 'Passend für Einzelmakler oder kleine Teams mit 6 bis 10 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
       { max: 20, name: 'Goldene Mitte',   price: 1479, text: 'Passend für wachsende Büros mit 11 bis 20 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
       { max: 40, name: 'Volles Haus',     price: 2499, text: 'Passend für grosse Büros mit 21 bis 40 Objekten im Monat.', video: 'produkt.html#video', cta: 'produkt.html', ctaLabel: 'Gratis starten' },
