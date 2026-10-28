@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261028c">
+<link rel="stylesheet" href="assets/site.css?v=20261028d">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -80,7 +80,7 @@
       </div>
       <article class="tier main paket" id="paket" aria-live="polite">
         <div class="paket-main">
-          <div class="tier-top"><span class="tier-price"><b id="paket-preis">CHF 0</b><small id="paket-einheit">pro Monat</small></span><span class="gruender-tag" id="paket-tag" hidden>Gründerpreis</span></div>
+          <div class="tier-top"><span class="tier-price"><b id="paket-preis">CHF 0</b><s class="paket-alt" id="paket-alt" hidden>statt <span>CHF 315.90</span></s><small id="paket-einheit">pro Monat</small></span><span class="gruender-tag" id="paket-tag" hidden>Gründerpreis</span></div>
           <h3 id="paket-name">Probiererli</h3>
           <div class="tier-body"><p id="paket-text">Ein Objekt. Das kostet dich nichts, für immer.</p></div>
           <div class="tier-foot">
@@ -525,6 +525,8 @@
       $('paket-preis').textContent = plus ? 'Individuell' : chf(price);
       $('paket-einheit').textContent = plus ? 'Wir machen dir ein Angebot' : (p.normal ? 'pro Monat' : 'für immer');
       $('paket-tag').hidden = !p.gruender;
+      $('paket-alt').hidden = !p.gruender;
+      $('paket-alt').querySelector('span').textContent = chf(p.normal);
       $('calc-plaetze').textContent = plus ? 'Mehr als 80 Objekte' : p.max + (p.max === 1 ? ' Objekt' : ' Objekte');
       $('calc-normal').hidden = !p.normal || plus;
       $('calc-gruender').hidden = !p.gruender;
