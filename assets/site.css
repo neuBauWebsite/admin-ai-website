@@ -629,3 +629,10 @@ h1, h2 { font-weight: 500; }
   .video .ph-note, .video .ph-len { font-size: .68rem; left: 10px; bottom: 10px; padding: 4px 8px; }
   .video .ph-len { left: auto; right: 10px; }
 }
+
+/* Gründerpreis (28.10.2026) */
+.gruender-tag { display: inline-block; align-self: center; font-size: .72rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); margin-left: auto; }
+.gruender-tag[hidden] { display: none; }
+.paket-calc li span { display: grid; }
+.paket-calc li span small { font-size: .8rem; color: var(--muted); }
+.paket-calc li.struck b { text-decoration: line-through; color: var(--muted); font-weight: 500; }
