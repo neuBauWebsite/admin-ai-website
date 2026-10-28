@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,650;12..96,700&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261026d">
+<link rel="stylesheet" href="assets/site.css?v=20261028a">
 <script>
   // Ansicht hell/dunkel: gewählte Ansicht merken (Klick aufs Logo wechselt)
   try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
@@ -41,6 +41,8 @@
       Ersetzen wie auf produkt.html: den <div class="poster">…</div> und die beiden <span class="ph-…"> löschen
       und ein <iframe> von Vimeo oder YouTube (nicht gelistet) einsetzen.
     -->
+    <div class="video-row">
+    <div class="video-col">
     <div class="video" id="video" role="img" aria-label="Platzhalter für das Video zum Paket Die Extrawurst">
       <div class="poster">
         <span class="playbtn" aria-hidden="true"></span>
@@ -48,47 +50,42 @@
       </div>
       <span class="ph-note">Video folgt · Platzhalter</span>
     </div>
-
     <div class="under-video">
       <div class="cta-block">
-        <a class="btn" href="start.html?enterprise#konto">Erstes Objekt gratis starten &amp; Video&#8209;Call mit Admin&#8209;AI
+        <a class="btn" href="start.html">Erstes Objekt gratis starten &amp; Video&#8209;Call mit Admin&#8209;AI
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <span class="cta-note">Für Maklerbüros ab 41 Objekten. Konto anlegen und Termin buchen.</span>
+        <span class="cta-note">Für Maklerbüros ab 41 Objekten. Termin buchen, dann Konto anlegen.</span>
       </div>
+    </div>
+    </div>
+    <!-- Kalender-Platzhalter (Kristian, 28.10.2026): Termin für 1 Stunde, neben dem Video. Beim Livegang mit Kristians Kalender synchronisieren (z. B. Cal.com oder Google Calendar einbetten). -->
+    <aside class="cal cal-side" id="termin" aria-label="Termin buchen">
+      <div class="cal-intro">
+        <p class="eyebrow">Video-Call · 1 Stunde</p>
+        <p class="muted">Wähl einen Tag und eine Zeit. Du zeigst uns dein Portfolio, wir machen dir ein Angebot.</p>
+      </div>
+      <div class="cal-head">
+        <button type="button" class="cal-nav" id="cal-prev" aria-label="Vorheriger Monat">‹</button>
+        <strong id="cal-title"></strong>
+        <button type="button" class="cal-nav" id="cal-next" aria-label="Nächster Monat">›</button>
+      </div>
+      <div class="cal-grid" id="cal-grid" role="grid"></div>
+      <div class="cal-slots" id="cal-slots" hidden>
+        <p class="cal-day" id="cal-day"></p>
+        <div class="cal-times" id="cal-times"></div>
+        <button class="btn" type="button" id="cal-book" disabled>Termin buchen</button>
+        <p class="form-msg" id="cal-msg" hidden>Vorschau: Der Kalender wird beim Livegang mit Kristians Kalender synchronisiert.</p>
+      </div>
+      <p class="muted cal-note">Platzhalter. Montag bis Freitag, 9 bis 17 Uhr, je 1 Stunde.</p>
+    </aside>
     </div>
   </div>
 </section>
 
-<section class="band">
+<!-- Kristian (28.10.2026): wie die andere Video-Seite, nur Video, Kalender, Button und Schlusszeile. Erklär-Abschnitt und Kontaktformular entfernt. -->
+<section class="final">
   <div class="wrap">
-    <div class="sec-head"><p class="eyebrow">Warum ein Büro das braucht</p><h2>2'000+ Anfragen in zwei Wochen. Und jeder antwortet anders.</h2></div>
-    <div class="zero">
-      <div><b>Ein Ton fürs ganze Büro</b><span>Jede Anfrage in unter 15 Minuten, in einem Ton, egal wer gerade in der Besichtigung ist.</span></div>
-      <div><b>Weitergabe ans Team</b><span>Was der Mitarbeiter nicht weiss, landet bei der richtigen Person. Ein Satz reicht.</span></div>
-      <div><b>Zahlen fürs Büro</b><span>Anfragen, Antwortzeiten, Termine und Absagegründe pro Objekt auf einen Blick.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="gespraech">
-  <div class="wrap form-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">Gespräch anfragen</p>
-      <h2>Wie viele Objekte hast du gerade online?</h2>
-      <div class="contact-card">
-        <img src="assets/team-kristian.jpg" alt="Kristian Dobro" width="120" height="120">
-        <div><strong>Kristian Dobro</strong><p class="muted">Er ruft dich an. Zusammen schaut ihr, wie viele Postfächer ihr verbindet und was dein Angebot kostet.</p></div>
-      </div>
-    </div>
-    <!-- Beim Livegang: Formular in Supabase-Tabelle «buero_anfragen» speichern und Kristian per Mail benachrichtigen. -->
-    <form id="buero-form" novalidate>
-      <label for="f-name">Name<input id="f-name" name="name" autocomplete="name" required></label>
-      <label for="f-buero">Büro<input id="f-buero" name="buero" autocomplete="organization" required></label>
-      <label for="f-objekte">Anzahl aktive Objekte<input id="f-objekte" name="objekte" type="number" min="1" inputmode="numeric" required></label>
-      <label for="f-tel">Telefon<input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></label>
-      <button class="btn" type="submit">Gespräch mit Kristian</button>
-      <p class="form-msg" id="form-msg" hidden>Vorschau: Das Formular wird beim Livegang angebunden.</p>
-    </form>
+    <h2 class="final-claim"><span>Die KI wird Makler nicht überrennen.</span> <span>Makler mit KI werden es tun.</span></h2>
   </div>
 </section>
 </main>
@@ -106,10 +103,46 @@
 </footer>
 
 <script>
-  document.getElementById('buero-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    document.getElementById('form-msg').hidden = false;
-  });
+  // Kalender-Platzhalter: Werktage ab morgen wählbar, Termine je 1 Stunde
+  (function () {
+    var months = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+    var days = ['Mo','Di','Mi','Do','Fr','Sa','So'];
+    var today = new Date(); today.setHours(0,0,0,0);
+    var view = new Date(today.getFullYear(), today.getMonth(), 1);
+    var grid = document.getElementById('cal-grid'), title = document.getElementById('cal-title');
+    var slots = document.getElementById('cal-slots'), dayEl = document.getElementById('cal-day'), times = document.getElementById('cal-times'), book = document.getElementById('cal-book');
+    var picked = null, pickedTime = null;
+    function render() {
+      title.textContent = months[view.getMonth()] + ' ' + view.getFullYear();
+      grid.innerHTML = '';
+      days.forEach(function (d) { var h = document.createElement('span'); h.className = 'cal-wd'; h.textContent = d; grid.appendChild(h); });
+      var first = (view.getDay() + 6) % 7;
+      for (var i = 0; i < first; i++) grid.appendChild(document.createElement('span'));
+      var n = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+      for (var d = 1; d <= n; d++) {
+        var date = new Date(view.getFullYear(), view.getMonth(), d), wd = date.getDay();
+        var ok = date > today && wd !== 0 && wd !== 6;
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = d; b.disabled = !ok;
+        if (picked && date.getTime() === picked.getTime()) b.classList.add('on');
+        b.addEventListener('click', (function (date) { return function () { picked = date; pickedTime = null; render(); showSlots(); }; })(date));
+        grid.appendChild(b);
+      }
+    }
+    function showSlots() {
+      slots.hidden = false; book.disabled = true;
+      dayEl.textContent = days[(picked.getDay() + 6) % 7] + ', ' + picked.getDate() + '. ' + months[picked.getMonth()] + ' ' + picked.getFullYear();
+      times.innerHTML = '';
+      ['09:00','10:00','11:00','13:00','14:00','15:00','16:00'].forEach(function (t) {
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = t;
+        b.addEventListener('click', function () { pickedTime = t; times.querySelectorAll('button').forEach(function (x) { x.classList.toggle('on', x === b); }); book.disabled = false; });
+        times.appendChild(b);
+      });
+    }
+    document.getElementById('cal-prev').addEventListener('click', function () { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); render(); });
+    document.getElementById('cal-next').addEventListener('click', function () { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render(); });
+    book.addEventListener('click', function () { document.getElementById('cal-msg').hidden = false; });
+    render();
+  })();
 </script>
 <script>
   // Klick aufs Logo wechselt zwischen heller und dunkler Ansicht

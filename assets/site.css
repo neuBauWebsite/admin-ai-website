@@ -610,3 +610,22 @@ h1, h2 { font-weight: 500; }
 .paket-calc li.sum small { font-weight: 400; color: var(--muted); font-size: .8rem; }
 .paket-calc li.sum b { font-size: 1.35rem; color: var(--accent); }
 @media (max-width: 640px) { .tier.paket { grid-template-columns: 1fr; padding: 20px; } .obj-box { padding: 18px 18px 14px; } }
+
+/* Video-Seite Extrawurst: Kalender neben dem Video (28.10.2026) */
+.video-row { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr); gap: 24px; align-items: start; }
+.video-row .video { min-width: 0; }
+.video-col { display: grid; gap: 24px; align-content: start; min-width: 0; }
+.cal-side { gap: 12px; }
+.cal-intro { display: grid; gap: 6px; }
+.cal-intro p { margin: 0; }
+.cal-intro .muted { font-size: .92rem; line-height: 1.45; }
+.cal-side .cal-note { font-size: .8rem; margin: 0; }
+@media (max-width: 900px) { .video-row { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .video .poster { gap: 12px; padding: 16px 16px 36px; }
+  .video .poster p { font-size: 1.25rem; }
+  .video .playbtn { width: 52px; box-shadow: 0 0 0 7px rgba(25, 112, 255, .25); }
+  .video .playbtn::after { border-left-width: 18px; border-top-width: 11px; border-bottom-width: 11px; }
+  .video .ph-note, .video .ph-len { font-size: .68rem; left: 10px; bottom: 10px; padding: 4px 8px; }
+  .video .ph-len { left: auto; right: 10px; }
+}
